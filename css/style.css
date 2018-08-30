@@ -18,18 +18,19 @@ html,body, .container-fluid, .sidebar2,.main-content{
     color:#afb1b5;
 }
 .logo>img {
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 1px;
-    border: 3px solid #F17153;
-    border-radius: 100%;
+    border: 1px solid #F17153;
+    border-radius: 200%;
     background-color: #fff;
 }
 .btn.Add-friend
 {
   background-color:#F17153;
-<!--#e65e50-->
-  border: 1px solid #50e6df;
+  box-shadow: 2px 2px 5px #000000;
+  border: none;
   color:#eee;
+  margin-top: 10px;
 }
 .btn.Add-friend:hover,.btn.Add-friend:active,.btn.Add-friend:active:focus,.btn.Add-friend:active:hover,.btn.Add-friend:visited,.btn.Add-friend:focus
 {
