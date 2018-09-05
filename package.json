@@ -1,28 +1,16 @@
 {
-  "name": "PS2-Gestor-de-Shows",
-  "version": "1.0.0",
-  "description": "Sistema Web para gestão de shows e venda de ingressos - NodeJS + MongoDB",
-  "main": "src/index.js",
+  "name": "eventop",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eduhirt/PS2-Gestor-de-Shows.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eduhirt/PS2-Gestor-de-Shows/issues"
-  },
-  "homepage": "https://github.com/eduhirt/PS2-Gestor-de-Shows#readme",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "config": "^2.0.1",
-    "express": "^4.16.3",
-    "mongoose": "^5.2.13",
-    "yarn": "^1.9.4"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.0"
   }
 }
