@@ -6,7 +6,7 @@ mongoose.connect('mongodb://eduardohirt@hotmail.com:eduardo031096.@https://ps2-s
 try{
     mongoose.Promise = global.Promise;
 } catch(err){
-    throw('Erro mongodb', err)
+    throw('Erro mongodb', err);
 }
 
 
