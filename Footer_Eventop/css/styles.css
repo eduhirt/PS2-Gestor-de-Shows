@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+footer{
+    font-family: 'Poppins', sans-serif;
+}
+.logo{
+    margin-top: 10%;    
+    max-width: 150px;
+}
+
+.footer {
+    background: #161616;
+    padding: 50px 0px;
+    color: #ddd;
+}
+
+.footer ul{
+    padding:0px;    
+}
+
+.footer ul li {
+    font-size: 15px;
+    margin: 10px;
+    list-style-type:none
+}
+
+.footer ul li a {
+    text-decoration:none;
+    color: #ddd;
+}
+.footer ul li a:hover{
+    color: #d62424;
+}
+
+.footer span {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing:3px;
+}
