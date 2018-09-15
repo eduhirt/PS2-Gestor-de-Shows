@@ -7,7 +7,7 @@ var logger = require('morgan');
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+var db = monk('eventop:eventop123@ds149672.mlab.com:49672/eventop');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
