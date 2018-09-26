@@ -53,4 +53,10 @@ router.post('/adduser', function(req, res) {
 });
 
 
+/* PÁGINA TESTE DE ADMINISTRADOR */
+router.get('/admin', function(req, res) {
+    res.render('admin', { title: 'Admin Page' });
+});
+
+
 module.exports = router;
