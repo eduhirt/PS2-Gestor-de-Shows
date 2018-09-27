@@ -21,7 +21,7 @@ router.get('/userlist', function(req, res) {
 });
 /* GET New User page. */
 router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+    res.render('newuser', { title: 'Criar Conta' });
 });
 /* POST to Add User Service */
 router.post('/adduser', function(req, res) {

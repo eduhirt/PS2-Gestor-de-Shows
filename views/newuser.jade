@@ -2,7 +2,21 @@ extends layout
 
 block content
   h1= title
+  br
+  br
   form#formAddUser(name="adduser",method="post",action="/adduser")
-    input#inputUserName(type="text", placeholder="username", name="username")
-    input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
-    button#btnSubmit(type="submit") submit
+    .form-group
+      label(for='formGroupExampleInput') Username
+      input#inputUserName.form-control(type="text", placeholder="username", name="username")
+      br
+      label(for='formGroupExampleInput') Email
+      input#inputUserEmail.form-control(type="text", placeholder="useremail", name="useremail")
+    .col-auto
+      button#btnSubmit.btn.btn-primary.mb-2(type="submit") Criar
+      
+  
+    h1= title
+    form#formAddUser(name="adduser",method="post",action="/adduser")
+      input#inputUserName(type="text", placeholder="username", name="username")
+      input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
+      button#btnSubmit(type="submit") submit
