@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.home-page{
+	margin-top: 10%;
+	min-height: 400px;
 }
-
-a {
-  color: #00B7FF;
+.criar-conta{
+	margin-top: 10%;
+	min-height: 400px;
 }
+.user-list{
+	margin-top: 10%;
+	min-height: 400px;
+}
+footer{
+	margin-top: 5%;
+	background-color: rgb(33, 37, 41);
+}
+.texto-branco{
+	color: #f5f5f5;
+}	

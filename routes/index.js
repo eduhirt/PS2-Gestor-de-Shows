@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Home' });
 });
 /* GET Hello World page. */
 router.get('/helloworld', function(req, res, next) {
@@ -21,7 +21,7 @@ router.get('/userlist', function(req, res) {
 });
 /* GET New User page. */
 router.get('/newuser', function(req, res) {
-    res.render('newuser', { title: 'Add New User' });
+    res.render('newuser', { title: 'Criar Conta' });
 });
 /* POST to Add User Service */
 router.post('/adduser', function(req, res) {
