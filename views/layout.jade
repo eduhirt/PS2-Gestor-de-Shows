@@ -3,5 +3,49 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
   body
-    block content
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='/') Eventop
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Início
+          li.nav-item
+            a.nav-link.disabled(href='/') Publicar evento
+          li.nav-item
+            a.nav-link(href='/userlist') userList
+        ul.navbar-nav.navbar-right
+          li.nav-item
+            a.nav-link(href='/newuser') Criar Conta
+          li.nav-item
+            a.nav-link.disabled(href='/') Login
+
+
+    .container
+      block content
+    //footer
+    footer.page-footer.font-small.blue.pt-4
+      hr
+      .container-fluid.text-center.text-md-left
+        .row
+          .col-md-2.mb-md-0.mb-2
+          .col-md-4.mb-md-0.mb-4
+            h4.texto-branco Eventop
+            ul.list-unstyled
+              li
+                a(href='/') Home
+              li
+                a(href='/') Publicar evento
+              li
+                a(href='/') Login
+              li
+                a(href='/newuser') Criar conta
+              li
+                a(href='/userlist') userList
+          .col-md-2.mb-md-0.mb-2
+          .footer-copyright.text-center.py-3.texto-branco
+            | ELDUO - All rights reserved 2018
+

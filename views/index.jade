@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .home-page
+    h1= title
+    br
+    br
+    form.form-inline.my-2.my-lg-0
+      input.form-control.mr-sm-2(placeholder='Pesquisar eventos', aria-label='Search', type='text')
+      button.btn.btn-primary.my-2.my-sm-0(type='submit') Pesquisar
