@@ -1,16 +1,34 @@
-// if our user.js file is at app/models/user.js
-var User = require('../models/user');
+var express = require('express');
+var router = express.Router();
+var User = require('../models/userSchema.js');
 
-// create a new user called chris
-var chris = new User({
-  name: 'Chris',
-  username: 'sevilayha',
-  password: 'password' 
+router.get('/register', function(req, res) {
+  res.render('register', { });
 });
 
-// call the built-in save method to save to the database
-chris.save(function(err) {
-  if (err) throw err;
+router.post('/register', function(req, res) {
+  User.register(new User({ email : req.body.email }), req.body.password, function(err, account) {
+      if (err) {
+          return res.render('register', { account : account });
+      }
 
-  console.log('User saved successfully!');
+      passport.authenticate('local')(req, res, function () {
+          res.redirect('/');
+      });
+  });
 });
+
+router.get('/login', function(req, res) {
+  res.render('login', { user : req.user });
+});
+
+router.post('/login', passport.authenticate('local'), function(req, res) {
+  res.redirect('/');
+});
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+module.exports = router;

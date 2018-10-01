@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 // New Code
 //CONEXÃO AO MONGODB
@@ -37,10 +39,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //AUTENTICAÇÃO
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(path.join(__dirname, 'public')));
 
 // passport config
-var Account = require('/models/userSchema');
+var Account = require('./models/userSchema');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
