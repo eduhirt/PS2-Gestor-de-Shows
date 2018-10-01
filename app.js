@@ -14,19 +14,6 @@ db.once('open', function callback () {
   console.log("h");
 });
 
-
-//AUTENTICAÇÃO
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(express.static(path.join(__dirname, 'public')));
-
-// passport config
-var Account = require('/models/userSchema');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
-
-
 //var mongo = require('mongodb');
 //var monk = require('monk');
 //var db = monk('eventop:eventop123@ds149672.mlab.com:49672/eventop');
@@ -45,6 +32,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+//AUTENTICAÇÃO
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// passport config
+var Account = require('/models/userSchema');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
