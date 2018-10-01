@@ -15,6 +15,18 @@ db.once('open', function callback () {
 });
 
 
+//AUTENTICAÇÃO
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
+
+// passport config
+var Account = require('/models/userSchema');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+
 //var mongo = require('mongodb');
 //var monk = require('monk');
 //var db = monk('eventop:eventop123@ds149672.mlab.com:49672/eventop');

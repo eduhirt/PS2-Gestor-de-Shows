@@ -17,6 +17,8 @@ var userSchema = new Schema({
   updated_at: Date
 });
 
+Account.plugin(passportLocalMongoose);
+
 // the schema is useless so far
 // we need to create a model using it
 var User = mongoose.model('User', userSchema);
