@@ -90,7 +90,7 @@ router.post('/adduser', function(req, res) {
 
 
 /* PÁGINA TESTE DE ADMINISTRADOR */
-router.get('/admin', function(req, res) {
+router.get('/admin', require('connect-ensure-login').ensureLoggedIn(), function(req, res) {
     res.render('admin', { title: 'Admin Page' });
 });
 

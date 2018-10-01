@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
+const LocalStrategy = require('passport-local').Strategy
+var User = require('./models/userSchema');
 
 // New Code
 //CONEXÃO AO MONGODB
@@ -37,14 +38,32 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //AUTENTICAÇÃO
+app.use(cookieParser());
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
 // passport config
 var Account = require('./models/userSchema');
-passport.use(new LocalStrategy(Account.authenticate()));
-passport.serializeUser(Account.serializeUser());
-passport.deserializeUser(Account.deserializeUser());
+passport.use(new LocalStrategy(
+  function(username, password, cb) {
+      User.find({username: username, password: password}, function(err, usr) {
+        console.log(usr);
+        return cb(null, usr);
+    });
+}));
+  
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
@@ -53,7 +72,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
