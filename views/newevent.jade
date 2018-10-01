@@ -1,0 +1,189 @@
+extends layout
+
+block content
+  .criar-evento
+    h1= title
+    form.form-horizontal
+      fieldset
+        .info-evento
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='textinput') Nome do evento
+            .col-md-6
+              input#textinput.form-control.input-md(name='textinput', placeholder='', required='', type='text')
+          // Textarea
+          .form-group
+            label.col-md-4.control-label(for='evento-descricao') Descrição do evento
+            .col-md-4
+              textarea#evento-descricao.form-control(name='evento-descricao')
+        .data-evento
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-inicio') Data início
+            .col-md-2
+              input#evento-inicio.form-control.input-md(name='evento-inicio', placeholder='', required='', type='text')
+          // Select Basic
+          .form-group
+            label.col-md-4.control-label(for='evento-horaInicio') Hora
+            .col-md-2
+              select#evento-horaInicio.form-control(name='evento-horaInicio')
+                option(value='0') 00
+                option(value='1') 01
+                option(value='2') 02
+                option(value='3') 03
+                option(value='4') 04
+                option(value='5') 05
+                option(value='6') 06
+                option(value='7') 07
+                option(value='8') 08
+                option(value='9') 09
+                option(value='10') 10
+                option(value='11') 11
+                option(value='12') 12
+                option(value='13') 13
+                option(value='14') 14
+                option(value='15') 15
+                option(value='16') 16
+                option(value='17') 17
+                option(value='18') 18
+                option(value='19') 19
+                option(value='20') 20
+                option(value='21') 21
+                option(value='22') 22
+                option(value='23') 23
+          // Select Basic
+          .form-group
+            label.col-md-4.control-label(for='evento-minutosInicio') Min
+            .col-md-2
+              select#evento-minutosInicio.form-control(name='evento-minutosInicio')
+                option(value='0') 00
+                option(value='5') 05
+                option(value='10') 10
+                option(value='15') 15
+                option(value='20') 20
+                option(value='25') 25
+                option(value='30') 30
+                option(value='35') 35
+                option(value='40') 40
+                option(value='45') 45
+                option(value='50') 50
+                option(value='55') 55
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-termino') Data término
+            .col-md-2
+              input#evento-termino.form-control.input-md(name='evento-termino', placeholder='', required='', type='text')
+          // Select Basic
+          .form-group
+            label.col-md-4.control-label(for='evento-horaTermino') Hora
+            .col-md-2
+              select#evento-horaTermino.form-control(name='evento-horaTermino')
+                option(value='0') 00
+                option(value='1') 01
+                option(value='2') 02
+                option(value='3') 03
+                option(value='4') 04
+                option(value='5') 05
+                option(value='6') 06
+                option(value='7') 07
+                option(value='8') 08
+                option(value='9') 09
+                option(value='10') 10
+                option(value='11') 11
+                option(value='12') 12
+                option(value='13') 13
+                option(value='14') 14
+                option(value='15') 15
+                option(value='16') 16
+                option(value='17') 17
+                option(value='18') 18
+                option(value='19') 19
+                option(value='20') 20
+                option(value='21') 21
+                option(value='22') 22
+                option(value='23') 23
+          // Select Basic
+          .form-group
+            label.col-md-4.control-label(for='evento-minutosTermino') Min
+            .col-md-2
+              select#evento-minutosTermino.form-control(name='evento-minutosTermino')
+                option(value='0') 00
+                option(value='5') 05
+                option(value='10') 10
+                option(value='15') 15
+                option(value='20') 20
+                option(value='25') 25
+                option(value='30') 30
+                option(value='35') 35
+                option(value='40') 40
+                option(value='45') 45
+                option(value='50') 50
+                option(value='55') 55
+        .local-evento
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-local') Local
+            .col-md-6
+              input#evento-local.form-control.input-md(name='evento-local', placeholder='', required='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-cep') CEP
+            .col-md-2
+              input#evento-cep.form-control.input-md(name='evento-cep', placeholder='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-rua') Av/Rua
+            .col-md-4
+              input#evento-rua.form-control.input-md(name='evento-rua', placeholder='', required='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-numero') Número
+            .col-md-4
+              input#evento-numero.form-control.input-md(name='evento-numero', placeholder='', required='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-complemento') Complemento
+            .col-md-4
+              input#evento-complemento.form-control.input-md(name='evento-complemento', placeholder='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-bairro') Bairro
+            .col-md-4
+              input#evento-bairro.form-control.input-md(name='evento-bairro', placeholder='', required='', type='text')
+          // Text input
+          .form-group
+            label.col-md-4.control-label(for='evento-cidade') Cidade
+            .col-md-4
+              input#evento-cidade.form-control.input-md(name='evento-cidade', placeholder='', required='', type='text')
+          // Select Basic
+          .form-group
+            label.col-md-4.control-label(for='evento-estado') Estado
+            .col-md-2
+              select#evento-estado.form-control(name='evento-estado')
+                option(value='') AC
+                option(value='') AL
+                option(value='') AP
+                option(value='') AM
+                option(value='') BA
+                option(value='') CE
+                option(value='') DF
+                option(value='') ES
+                option(value='') GO
+                option(value='') MA
+                option(value='') MT
+                option(value='') MS
+                option(value='') MG
+                option(value='') PA
+                option(value='') PB
+                option(value='') PR
+                option(value='') PI
+                option(value='') RJ
+                option(value='') RN
+                option(value='') RS
+                option(value='') RO
+                option(value='') RR
+                option(value='') SC
+                option(value='') SP
+                option(value='') SE
+                option(value='') TO
+

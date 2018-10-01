@@ -1,3 +1,6 @@
+h1{
+	text-align: center;
+}
 .home-page{
 	margin-top: 10%;
 	min-height: 400px;
@@ -5,6 +8,25 @@
 .criar-conta{
 	margin-top: 10%;
 	min-height: 400px;
+}
+.criar-evento{
+	margin-top: 10%;
+	min-height: 400px;
+}
+.info-evento{
+	margin-top:1%;
+	background-color: #f5f5f5;
+	border-radius: 6px;
+}
+.data-evento{
+	margin-top:1%;
+	background-color: #f5f5f5;
+	border-radius: 6px;
+}
+.local-evento{
+	margin-top:1%;
+	background-color: #f5f5f5;
+	border-radius: 6px;
 }
 .user-list{
 	margin-top: 10%;
