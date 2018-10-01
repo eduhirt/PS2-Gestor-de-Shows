@@ -33,6 +33,10 @@ router.get('/userlist', function(req, res) {
 });
 
 
+/* GET New Event page. */
+router.get('/newevent', function(req, res) {
+    res.render('newevent', { title: 'Publicar evento' });
+});
 
 
 /* GET New User page. */
