@@ -7,7 +7,16 @@ var passport = require('passport');
 
 /* TEMPLATES */
 
+//Home page router
 router.get('/', function(req, res) {
+  //Salva todos os objetos show na variável shows
+  var shows = {};
+  Show.find({}, function (err, show) {
+      shows[show._id] = show;
+  });
+  //Manda a variável shows para o template
+  res.send(shows);
+
   res.render('show_index', { title: 'Shows' });
 });
 
@@ -19,7 +28,8 @@ router.get('/register', function(req, res) {
 
 /* FUNCIONALIDADES */
 
-router.post('/register', function(req, res) {
+//Registro de eventos, chamar a função com todos os campos(req.body.*nome da variavel*) para registrar
+router.post('/register', require('connect-ensure-login').ensureLoggedIn(), function(req, res) {
   var db = req.db;
   var show = new Show({
     name: req.body.name,
@@ -33,7 +43,7 @@ router.post('/register', function(req, res) {
     place_description: req.body.place_description,
     crowd_limit: req.body.crowd_limit
   });
-  // call the built-in save method to save to the database
+
   show.save(function(err) {
     if (err) throw err;
     console.log('New show saved successfully!');
@@ -41,7 +51,9 @@ router.post('/register', function(req, res) {
   });
 });
 
-router.delete('/:id/delete', function(req,res) {
+
+//Deleta show - usado em botões para chamar o url com o id do show a deletar
+router.delete('/:id/delete', require('connect-ensure-login').ensureLoggedIn(), function(req,res) {
   Show.findByIdAndRemove(req.params.id, function (err) {
     if (err) return next(err);
     res.send('Show deleted successfully!');
@@ -49,7 +61,8 @@ router.delete('/:id/delete', function(req,res) {
 })
 
 
-router.put('/:showid/:usrid/buy', function(req,res){
+//Compra ingresso para o show - Dá update nas variáveis bought(Show) e shows(User)
+router.put('/:showid/:usrid/buy', require('connect-ensure-login').ensureLoggedIn(), function(req,res){
   var show = Show.findByIdAndUpdate(req.params.showid, function(err,shw){
     show.bought.push(req.params.usrid);
   });
@@ -59,23 +72,13 @@ router.put('/:showid/:usrid/buy', function(req,res){
 })
 
 
-router.put('/:id/update', function(req, res){
+//Update show - edita os campos selecionados do show  
+router.put('/:id/update', require('connect-ensure-login').ensureLoggedIn(), function(req, res){
   Show.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, show) {
     if (err) return next(err);
     res.send('Show udpated.');
   });
 })
-
-
-router.get('/get', function(req, res) {
-  var shows = {};
-
-  Show.find({}, function (err, user) {
-      shows[show._id] = user;
-  });
-
-  res.send(users);
-});
 
 
 module.exports = router;
