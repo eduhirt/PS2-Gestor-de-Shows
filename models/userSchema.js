@@ -13,7 +13,8 @@ var userSchema = new Schema({
   admin: Boolean,
   location: String,
   created_at: Date,
-  updated_at: Date
+  updated_at: Date,
+  shows: [String]
 });
 
 // the schema is useless so far

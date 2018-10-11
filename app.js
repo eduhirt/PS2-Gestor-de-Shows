@@ -23,6 +23,7 @@ db.once('open', function callback () {
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var showsRouter = require('./routes/shows');
 
 var app = express();
 
@@ -73,6 +74,7 @@ app.use(function(req,res,next){
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
+app.use('/show/', showsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -36,4 +36,19 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+router.delete('/user/:id/delete', function(req,res) {
+  User.findByIdAndRemove(req.params.id, function (err) {
+    if (err) return next(err);
+    res.send('User deleted successfully!');
+  })
+})
+
+
+router.put('/user/:id/update', function(req, res){
+  User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, show) {
+    if (err) return next(err);
+    res.send('User udpated.');
+  });
+})
+
 module.exports = router;
