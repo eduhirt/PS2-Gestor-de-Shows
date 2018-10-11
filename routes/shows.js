@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/showSchema.js');
+var Show = require('../models/showSchema.js');
 var passport = require('passport');
 
 
@@ -14,10 +14,10 @@ router.get('/', function(req, res) {
   Show.find({}, function (err, show) {
       shows[show._id] = show;
   });
-  //Manda a variável shows para o template
+  //Imprime a variável shows na tela
   res.send(shows);
 
-  res.render('show_index', { title: 'Shows' });
+  //res.render('show_index', { title: 'Shows' });
 });
 
 router.get('/register', function(req, res) {
