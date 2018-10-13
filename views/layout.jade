@@ -5,21 +5,19 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
   body
-    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+    nav.navbar.navbar-expand-md.navbar-custom.navbar-color.navbar-fixed-top
       a.navbar-brand(href='/') Eventop
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
-          li.nav-item
-            a.nav-link(href='/') Início
-          li.nav-item
-            a.nav-link(href='/userlist') userList
-        ul.navbar-nav.navbar-right
+          li.nav-item.margin-left
+            a.nav-link(href='/') Eventos
           li.nav-item
             a.nav-link(href='/newevent') Publicar evento
+        ul.navbar-nav.navbar-right
           li.nav-item
-            a.nav-link(href='/newuser') Criar Conta
+            a.nav-link(href='/newuser') Criar conta
           li.nav-item
             a.nav-link.disabled(href='/') Login
 
@@ -28,24 +26,21 @@ html
       block content
     //footer
     footer.page-footer.font-small.blue.pt-4
-      hr
       .container-fluid.text-center.text-md-left
         .row
-          .col-md-2.mb-md-0.mb-2
-          .col-md-4.mb-md-0.mb-4
+          .col-md-2
+          .col-md-6
             h4.texto-branco Eventop
             ul.list-unstyled
               li
-                a(href='/') Home
+                a.link-footer(href='/') Home
               li
-                a(href='/newevent') Publicar evento
+                a.link-footer(href='/newevent') Publicar evento
               li
-                a(href='/') Login
+                a.link-footer(href='/') Login
               li
-                a(href='/newuser') Criar conta
-              li
-                a(href='/userlist') userList
-          .col-md-2.mb-md-0.mb-2
-          .footer-copyright.text-center.py-3.texto-branco
-            | ELDUO - All rights reserved 2018
+                a.link-footer(href='/newuser') Criar conta
+          .col-md-4
+            .footer-copyright.text-center.py-3.texto-branco.direitos
+              | ELDUO - All rights reserved 2018
 

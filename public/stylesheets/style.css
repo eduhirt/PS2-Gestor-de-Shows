@@ -1,41 +1,118 @@
+@font-face {
+    font-family: aleo;
+    src: url(../fonts/Aleo-Light.otf);
+}
+@media only screen and (max-width: 767px) {
+	#publicar-evento-guia-nome{
+		display:none;
+	}
+	#publicar-evento-guia-data{
+		display:none;
+	}
+	#publicar-evento-guia-local{
+		display:none;
+	}
+}
+
+/* Geral */
+body{
+	font-family: "Aleo" !important;
+	background-color: #e7dfdd !important;
+}
 h1{
 	text-align: center;
 }
+
+
+/* Navbar */
+.navbar-brand{
+	color: #e7dfdd;
+}
+.navbar-brand:hover, .navbar-brand:active{
+	color: #4717f6;
+}
+.navbar-custom .navbar-nav .nav-link {
+	color: #e7dfdd;
+}
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+ 	 color: #4717f6;
+}
+.navbar-color{
+	background-color: #0e0b16;
+}
+
+/* Arrumar esses WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw */
+.margin-top{
+	padding-top: 8%;
+}
+.margin-left{
+	margin-left: 30px;
+}
 .home-page{
 	margin-top: 10%;
-	min-height: 400px;
+	min-height: 100vh;
 }
 .criar-conta{
-	margin-top: 10%;
-	min-height: 400px;
-}
-.criar-evento{
-	margin-top: 10%;
-	min-height: 400px;
-}
-.info-evento{
-	margin-top:1%;
-	background-color: #f5f5f5;
-	border-radius: 6px;
-}
-.data-evento{
-	margin-top:1%;
-	background-color: #f5f5f5;
-	border-radius: 6px;
-}
-.local-evento{
-	margin-top:1%;
-	background-color: #f5f5f5;
-	border-radius: 6px;
+	min-height: 100vh;
+	margin-top: 2%;
 }
 .user-list{
 	margin-top: 10%;
-	min-height: 400px;
+	min-height: 100vh;
 }
+
+
+/* Publicar evento */
+#publicar-evento{
+	padding-top: 2%;
+	min-height: 100vh;
+}
+#form-evento{
+	margin-top: 3%;
+	text-align: right;
+}
+#publicar-evento-guia-nome{
+	margin-top: 8%;
+	text-align: center;
+}
+#publicar-evento-guia-data{
+	margin-top: 8%;
+	text-align: center;
+}
+#publicar-evento-guia-local{
+	margin-top: 50%;
+	text-align: center;
+}
+#data-evento{
+	margin-top: 4%;
+}
+#local-evento{
+	margin-top:4%;
+}
+
+
+/* Form e Buttons */
+.btn.btn-primary{
+	background-color: #4717f6 !important;
+	border: none !important;
+}
+.btn.btn-primary:active, .btn.btn-primary:focus{
+	box-shadow: 0 0 0 0.2rem rgba(14, 11, 22,0.7) !important;
+}
+.form-control:focus {
+	border-color: rgba(71, 23, 246,0.2) !important;
+	box-shadow: 0 0 0 0.2rem rgba(71, 23, 246,0.2) !important;
+}
+
+/* Footer */
 footer{
-	margin-top: 5%;
-	background-color: rgb(33, 37, 41);
+	margin-top: 3%;
+	background-color: #0e0b16;
 }
 .texto-branco{
-	color: #f5f5f5;
-}	
+	color: #e7dfdd;
+}
+a.link-footer{
+	color: #4717f6 !important;
+}
