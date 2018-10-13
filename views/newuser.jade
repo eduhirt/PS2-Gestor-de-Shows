@@ -2,21 +2,30 @@ extends layout
 
 block content
   .criar-conta
-    h1= title
+    h1 Criar conta
     .container-fluid.margin-top
       .row
-        div.col-md-4
-        div.col-md-4
-          form#formAddUser(name="adduser",method="post",action="/adduser")
-            .form-group
-              label(for='formGroupExampleInput') Username
-              input#inputUserName.form-control(type="text", placeholder="username", name="username")
-              br
-              label(for='formGroupExampleInput') Email
-              input#inputUserEmail.form-control(type="text", placeholder="useremail", name="useremail")
-              
-            button#btnSubmit.btn.btn-primary.mb-2(type="submit") Criar conta
-        div.col-md-4
+        div.col-md-3
+        div.col-md-6.main-div
+          .row
+            div.col-md-2
+            div.col-md-8
+              form#formAddUser(name="adduser",method="post",action="/adduser")
+                .form-group
+                  label(for='formGroupExampleInput') Nome Completo
+                  input#inputUserCompleteName.form-control(type="text", placeholder="", name="usercompletename")
+                .form-group
+                  label(for='formGroupExampleInput') E-mail
+                  input#inputUserEmail.form-control(type="email", placeholder="", name="useremail")
+                .form-group
+                  label(for='formGroupExampleInput') Usuário
+                  input#inputUserName.form-control(type="text", placeholder="", name="username")
+                .form-group
+                  label(for='formGroupExampleInput') Senha
+                  input#inputUserPassword.form-control(type="password", placeholder="", name="password")
+                button#btnSubmit.btn.btn-primary.mb-2(type="submit") Criar conta
+            div.col-md-2
+        div.col-md-3
     //- 
       h1= title
       form#formAddUser(name="adduser",method="post",action="/adduser")

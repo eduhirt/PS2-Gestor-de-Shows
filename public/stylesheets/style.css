@@ -2,6 +2,11 @@
     font-family: aleo;
     src: url(../fonts/Aleo-Light.otf);
 }
+@font-face {
+    font-family: lora;
+	src: url(../fonts/Lora-Bold.ttf);
+
+}
 @media only screen and (max-width: 767px) {
 	#publicar-evento-guia-nome{
 		display:none;
@@ -12,11 +17,14 @@
 	#publicar-evento-guia-local{
 		display:none;
 	}
+	#form-evento{
+		text-align: center !important;
+	}
 }
 
 /* Geral */
 body{
-	font-family: "Aleo" !important;
+	font-family: "aleo" !important;
 	background-color: #e7dfdd !important;
 }
 h1{
@@ -26,10 +34,12 @@ h1{
 
 /* Navbar */
 .navbar-brand{
-	color: #e7dfdd;
+	font-family: "lora", serif !important;
+	font-size: 30px !important;
+	color: #fff;
 }
 .navbar-brand:hover, .navbar-brand:active{
-	color: #4717f6;
+	color: #e7dfdd;
 }
 .navbar-custom .navbar-nav .nav-link {
 	color: #e7dfdd;
@@ -44,17 +54,21 @@ h1{
 
 /* Arrumar esses WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw */
 .margin-top{
-	padding-top: 8%;
+	padding-top: 3%;
 }
 .margin-left{
 	margin-left: 30px;
 }
 .home-page{
-	margin-top: 10%;
+	margin-top: 2%;
 	min-height: 100vh;
 }
 .criar-conta{
 	min-height: 100vh;
+	margin-top: 2%;
+}
+#page-login{
+	min-height: 80vh;
 	margin-top: 2%;
 }
 .user-list{
@@ -96,6 +110,11 @@ h1{
 .btn.btn-primary{
 	background-color: #4717f6 !important;
 	border: none !important;
+	/*border: solid 2px #4717f6 !important;*/
+}
+.btn.btn-primary:hover{
+	/*color: #0e0b16 !important;*/
+	background-color: #0e0b16 !important;
 }
 .btn.btn-primary:active, .btn.btn-primary:focus{
 	box-shadow: 0 0 0 0.2rem rgba(14, 11, 22,0.7) !important;
@@ -110,9 +129,27 @@ footer{
 	margin-top: 3%;
 	background-color: #0e0b16;
 }
+.footer-brand{
+	font-family: "lora", serif !important;
+	font-size: 30px !important;
+	color: #fff;
+}
 .texto-branco{
 	color: #e7dfdd;
 }
 a.link-footer{
+	color: #e7dfdd !important;
+	text-decoration: none !important;
+}
+a.link-footer:hover{
 	color: #4717f6 !important;
 }
+
+
+.main-div {
+	background: #fff none repeat scroll 0 0;
+	/* box-shadow: 0 0 0 0.1rem #4717f6; */
+	border-radius: 9px;
+
+	padding: 50px 70px 70px 71px;
+  }

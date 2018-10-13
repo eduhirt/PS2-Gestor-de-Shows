@@ -11,7 +11,6 @@ var userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String },
   admin: Boolean,
-  location: String,
   created_at: Date,
   updated_at: Date,
   shows: [String]

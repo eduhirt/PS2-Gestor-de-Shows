@@ -1,12 +1,13 @@
 doctype html
 html
   head
-    title= title
+    title Eventop - Plataforma de Shows
+    link(rel='shortcut icon', href='/images/top.png')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
   body
     nav.navbar.navbar-expand-md.navbar-custom.navbar-color.navbar-fixed-top
-      a.navbar-brand(href='/') Eventop
+      a.navbar-brand(href='/') EVENTOP
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
       #navbarsExampleDefault.collapse.navbar-collapse
@@ -19,8 +20,7 @@ html
           li.nav-item
             a.nav-link(href='/newuser') Criar conta
           li.nav-item
-            a.nav-link.disabled(href='/') Login
-
+            a.nav-link.disabled(href='/login') Login
 
     .container
       block content
@@ -30,14 +30,14 @@ html
         .row
           .col-md-2
           .col-md-6
-            h4.texto-branco Eventop
+            h4.footer-brand EVENTOP
             ul.list-unstyled
               li
-                a.link-footer(href='/') Home
+                a.link-footer(href='/') Eventos
               li
                 a.link-footer(href='/newevent') Publicar evento
               li
-                a.link-footer(href='/') Login
+                a.link-footer(href='/login') Login
               li
                 a.link-footer(href='/newuser') Criar conta
           .col-md-4

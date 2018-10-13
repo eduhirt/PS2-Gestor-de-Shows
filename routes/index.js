@@ -8,16 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
-
-/* GET Hello World page. */
-router.get('/helloworld', function(req, res, next) {
-    res.render('helloworld', { title: 'Hello, World!' });
-});
-
-
-
-
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
