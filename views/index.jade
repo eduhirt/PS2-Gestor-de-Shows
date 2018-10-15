@@ -2,14 +2,14 @@ extends layout
 
 block content
   .home-page
-    h1 Lista de shows
+    h1.home Lista de shows
     .container
       .row
         .col-md-2
-        .col-md-8
+        .col-md-8.main-div-show
           ul
             each show in shows
-              div.main-div-show
+              div
                 a.link-shows(href="/show/#{show.id}") #{show.name}
                 p.description-show #{show.description}
         .col-md-2

@@ -25,15 +25,15 @@
 /* Geral */
 body{
 	font-family: "aleo" !important;
-	background-image: url("https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	background-size: cover;
-	background-repeat: no-repeat;
 	background-color: #e7dfdd !important;
 }
 h1{
 	text-align: center;
 }
-
+h1.home{
+	color: #fff;
+	padding-top: 20px;
+}
 
 /* Navbar */
 .navbar-brand{
@@ -63,6 +63,11 @@ h1{
 	margin-left: 30px;
 }
 .home-page{
+	border-radius: 5px;
+	background-image: url("https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	margin-top: 2%;
 	min-height: 100vh;
 }
@@ -91,9 +96,6 @@ a.link-login:hover{
 }
 .form-pesquisa{
 	margin-top: 6%;
-}
-a.link-shows{
-	font-size: 30px !important;
 }
 
 
@@ -170,7 +172,15 @@ a.link-footer:hover{
 	color: #4717f6 !important;
 }
 
-
+a.link-shows:hover{
+	text-decoration: none;
+	text-shadow: 1px #4717f6;
+	color: #777;
+}
+a.link-shows{
+	font-size: 30px !important;
+	color: #4717f6;
+}
 .main-div {
 	background: #fff none repeat scroll 0 0;
 	/* box-shadow: 0 0 0 0.1rem #4717f6; */
@@ -181,9 +191,8 @@ p.description-show{
 	color: #fff;
 }
 .main-div-show{
-	background: #0e0b16 none repeat scroll 0 0;
-	box-shadow: 0 0 0 0.2rem #4717f6; 
-	border-radius: 1px;
-
+	margin-top:10px;
+	background: rgba(14, 11, 22,0.95) none repeat scroll 0 0;
+	border-radius: 4px;
 	padding: 50px 70px 70px 71px;
 }
