@@ -84,6 +84,7 @@ h1.home{
 	margin-top: 2%;
 }
 .user-list{
+	margin-top:5%;
 	min-height: 100vh;
 }
 .nao-cadastrado{
@@ -207,3 +208,17 @@ p.description-show{
 	margin-top: 7%;
 	text-align: center;
 }
+.texto-direita{
+	text-align: right;
+}
+.botao-cadastro{
+	text-align: center;
+	float: center;
+}
+/*              p #{show.adress}
+              p #{show.adress_number}
+              p #{show.adress_complement}
+              p #{show.adress_neighborhood}
+              p #{show.adress_city}
+              p #{show.adress_state}
+              p #{show.adress_CEP}*/

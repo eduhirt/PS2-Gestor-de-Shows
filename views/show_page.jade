@@ -6,27 +6,36 @@ block content
       .row
         .col-md-2
         .col-md-8.main-div.margin-top
-          h2.texto-negrito.margin-top #{show.name}
-          p #{show.description}
-          p #{show.place}
-          p #{show.band}
-          p #{show.adress_number}
-          p #{show.adress_complement}
-          p #{show.adress_neighborhood}
-          p #{show.adress_city}
-          p #{show.adress_CEP}
-          p #{show.adress_state}
-          p Início: #{show.start}
-          p Término: #{show.end}
-          div
+          h2.margin-left.texto-negrito #{show.name}
+          p.margin-left #{show.description}
+          .row 
+            .col-md-2
+              p.texto-negrito.texto-direita Banda:
+            .col-md-10
+              p #{show.band}
+          .row 
+            .col-md-2
+              p.texto-negrito.texto-direita Local:
+            .col-md-10
+              p #{show.place}
+          .row 
+            .col-md-2
+              p.texto-negrito.texto-direita Início:
+            .col-md-10
+              p #{show.start}
+          .row 
+            .col-md-2
+              p.texto-negrito.texto-direita Término:
+            .col-md-10
+              p #{show.end}
+          div.botao-cadastro.margin-top
             form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
               if (session.passport != undefined)
                 if (session.passport.user != undefined)
                   each user in session.passport.user
-                    div #{user.name}
                     if (show.bought.includes(user._id))
-                      p Cadastrado no Show!
+                      p Cadastrado no evento!
                     else
-                      button(type="submit") Cadastrar no show
+                      button.btn.btn-primary(type="submit") Cadastrar no evento
         .col-md-2
             
