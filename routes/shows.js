@@ -30,8 +30,14 @@ router.get('/register', function(req, res) {
 router.get('/:id', function(req, res){
   Show.findById(req.params.id, function(err, show) {
     console.log(show)
+
+    req.user.forEach(usr => {
+      var user = usr._id;
+    });
+
     res.render('show_page', {
-        "show" : show
+        "show" : show,
+        "user": user
     });
   });
 })

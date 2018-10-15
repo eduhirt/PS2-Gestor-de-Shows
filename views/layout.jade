@@ -17,14 +17,20 @@ html
           li.nav-item
             a.nav-link(href='/newevent') Publicar evento
         ul.navbar-nav.navbar-right
-          if ( session.passport.user == undefined)
+          if (session.passport != undefined)
+            if ( session.passport.user == undefined )
+              li.nav-item
+                a.nav-link(href='/newuser') Criar conta
+              li.nav-item
+                a.nav-link.disabled(href='/login') Login
+            else
+              li.nav-item
+                a.nav-link(href='/logout') Logout
+          else
             li.nav-item
               a.nav-link(href='/newuser') Criar conta
             li.nav-item
               a.nav-link.disabled(href='/login') Login
-          else
-            li.nav-item
-              a.nav-link(href='/logout') Logout
 
     .container
       block content
