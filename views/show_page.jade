@@ -5,6 +5,7 @@ block content
     h1.
       Show Page
     div #{show.name}
+    div #{show.description}
       div
         form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
           if (session.passport != undefined)
