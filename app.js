@@ -38,6 +38,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 //AUTENTICAÇÃO
 app.use(cookieParser());
 app.use(require('express-session')({

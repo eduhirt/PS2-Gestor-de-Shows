@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  .user-list
+    h1.
+      Show List
+    ul
+      each show in shows
+        div #{show.name}

@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/userSchema.js');
+var Show = require('../models/showSchema.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home' });
+    Show.find({}, function(err, shows) {
+        console.log(shows);
+        res.render('index', {
+            "shows" : shows
+        });
+      });
 });
 
 
@@ -24,7 +30,7 @@ router.get('/userlist', function(req, res) {
 
 
 /* GET New Event page. */
-router.get('/newevent', function(req, res) {
+router.get('/newevent', require('connect-ensure-login').ensureLoggedIn(), function(req, res) {
     res.render('newevent', { title: 'Publicar evento' });
 });
 

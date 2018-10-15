@@ -10,12 +10,14 @@ var passport = require('passport');
 //Home page router
 router.get('/', function(req, res) {
   //Salva todos os objetos show na variável shows
-  var shows = {};
-  Show.find({}, function (err, show) {
-      shows[show._id] = show;
+
+
+  Show.find({}, function(err, shows) {
+    console.log(shows);
+    res.render('showlist', {
+        "shows" : shows
+    });
   });
-  //Imprime a variável shows na tela
-  res.send(shows);
 
   //res.render('show_index', { title: 'Shows' });
 });
@@ -23,6 +25,15 @@ router.get('/', function(req, res) {
 router.get('/register', function(req, res) {
   res.render('newshow', { });
 });
+
+router.get('/:id', function(req, res){
+  Show.findById(req.params.id, function(err, show) {
+    console.log(show)
+    res.render('show_page', {
+        "show" : show
+    });
+  });
+})
 
 
 
@@ -32,16 +43,21 @@ router.get('/register', function(req, res) {
 router.post('/register', require('connect-ensure-login').ensureLoggedIn(), function(req, res) {
   var db = req.db;
   var show = new Show({
-    name: req.body.name,
-    description: req.body.description,
-    created_by: req.user,
-    time: req.body.time,
+    name: req.body.textinput,
+    description: req.body.descricao,
+    created_by: req.user.name,
+    start: req.body.inicio,
+    end: req.body.termino,
     band: req.body.band,
-    picture_url: req.body.picture_url,
-    place_address: req.body.address,
-    place_CEP: req.body.CEP,
-    place_description: req.body.place_description,
-    crowd_limit: req.body.crowd_limit
+    place: req.body.local,
+    address: req.body.rua,
+    address_number: req.body.numero,
+    address_complement: req.body.complemento,
+    address_neighborhood: req.body.bairro,
+    address_city: req.body.cidade,
+    address_CEP: req.body.cep,
+    address_state: req.body.estado,
+    crowd_limit: req.body.limit
   });
 
   show.save(function(err) {

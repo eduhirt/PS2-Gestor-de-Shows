@@ -6,3 +6,11 @@ block content
     form.form-inline.my-2.my-lg-0
       input.form-control.mr-sm-2(placeholder='Pesquisar eventos', aria-label='Search', type='text')
       button.btn.btn-primary.my-2.my-sm-0(type='submit') Pesquisar
+
+    .user-list
+    h1.
+      Show List
+    ul
+      each show in shows
+        div
+          a(href="/show/#{show.id}") #{show.name}

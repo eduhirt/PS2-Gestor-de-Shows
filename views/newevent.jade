@@ -3,7 +3,7 @@ extends layout
 block content
   #publicar-evento
     h1 Publicar evento
-    form.form-horizontal
+    form.form-horizontal(name="addevento",method="post",action="/show/register")
       fieldset
         #form-evento
           .row
@@ -15,9 +15,14 @@ block content
                   input#textinput.form-control.input-md(name='textinput', placeholder='', required='', type='text')
               // Descricao
               .form-group.row
-                label.col-md-3.control-label(for='evento-descricao') Descrição do evento
+                label.col-md-3.control-label(for='descricao') Descrição do evento
                 .col-md-9
-                  textarea#evento-descricao.form-control(name='evento-descricao')
+                  textarea#descricao.form-control(name='descricao')
+              // Limite de pessoas
+              .form-group.row
+                label.col-md-3.control-label(for='limit') Limite de pessoas
+                .col-md-9
+                  input#limit.form-control.input-md(name='limit', placeholder='', required='', type='text')
             .col-md-4
               #publicar-evento-guia-nome
                 h4 Nome e descrição
@@ -27,22 +32,22 @@ block content
               .col-md-8
                 // Data inicio
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-inicio') Início
+                  label.col-md-3.control-label(for='inicio') Início
                   .col-md-5
-                    input#evento-inicio.form-control.input-md(name='evento-inicio', placeholder='', required='', type='date')
+                    input#inicio.form-control.input-md(name='inicio', placeholder='', required='', type='date')
                   // Hora inicio
-                  label.col-md-1.control-label(for='evento-horaInicio') Hora
+                  label.col-md-1.control-label(for='horaInicio') Hora
                   .col-md-3
-                    input#evento-horaInicio.form-control.input-md(name='evento-horaInicio', placeholder='', required='', type='time')
+                    input#horaInicio.form-control.input-md(name='horaInicio', placeholder='', required='', type='time')
                 // Data termino
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-termino') Término
+                  label.col-md-3.control-label(for='termino') Término
                   .col-md-5
-                    input#evento-termino.form-control.input-md(name='evento-termino', placeholder='', required='', type='date')
+                    input#termino.form-control.input-md(name='termino', placeholder='', required='', type='date')
                   // Hora termino
-                  label.col-md-1.control-label(for='evento-horaTermino') Hora
+                  label.col-md-1.control-label(for='horaTermino') Hora
                   .col-md-3
-                    input#evento-termino.form-control.input-md(name='evento-horaTermino', placeholder='', required='', type='time')
+                    input#horaTermino.form-control.input-md(name='horaTermino', placeholder='', required='', type='time')
               .col-md-4
                 #publicar-evento-guia-data
                   h4 Data
@@ -52,44 +57,44 @@ block content
               .col-md-8
                 // Local
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-local') Local
+                  label.col-md-3.control-label(for='local') Local
                   .col-md-9
-                    input#evento-local.form-control.input-md(name='evento-local', placeholder='', required='', type='text')
+                    input#local.form-control.input-md(name='local', placeholder='', required='', type='text')
                 // CEP
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-cep') CEP
+                  label.col-md-3.control-label(for='cep') CEP
                   .col-md-9
-                    input#evento-cep.form-control.input-md(name='evento-cep', placeholder='', type='text')
+                    input#cep.form-control.input-md(name='cep', placeholder='', type='text')
                 // Rua
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-rua') Av/Rua
+                  label.col-md-3.control-label(for='rua') Av/Rua
                   .col-md-9
-                    input#evento-rua.form-control.input-md(name='evento-rua', placeholder='', required='', type='text')
+                    input#rua.form-control.input-md(name='rua', placeholder='', required='', type='text')
                 // Numero
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-numero') Número
+                  label.col-md-3.control-label(for='numero') Número
                   .col-md-9
-                    input#evento-numero.form-control.input-md(name='evento-numero', placeholder='', required='', type='text')
+                    input#numero.form-control.input-md(name='numero', placeholder='', required='', type='text')
                 // Complemento
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-complemento') Complemento
+                  label.col-md-3.control-label(for='complemento') Complemento
                   .col-md-9
-                    input#evento-complemento.form-control.input-md(name='evento-complemento', placeholder='', type='text')
+                    input#complemento.form-control.input-md(name='complemento', placeholder='', type='text')
                 // Bairro
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-bairro') Bairro
+                  label.col-md-3.control-label(for='bairro') Bairro
                   .col-md-9
-                    input#evento-bairro.form-control.input-md(name='evento-bairro', placeholder='', required='', type='text')
+                    input#bairro.form-control.input-md(name='bairro', placeholder='', required='', type='text')
                 // Cidade
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-cidade') Cidade
+                  label.col-md-3.control-label(for='cidade') Cidade
                   .col-md-9
-                    input#evento-cidade.form-control.input-md(name='evento-cidade', placeholder='', required='', type='text')
+                    input#cidade.form-control.input-md(name='cidade', placeholder='', required='', type='text')
                 // Estado
                 .form-group.row
-                  label.col-md-3.control-label(for='evento-estado') Estado
+                  label.col-md-3.control-label(for='estado') Estado
                   .col-md-5
-                    select#evento-estado.form-control(name='evento-estado')
+                    select#estado.form-control(name='estado')
                       option(value='') AC
                       option(value='') AL
                       option(value='') AP
