@@ -14,6 +14,12 @@ router.get('/', function(req, res, next) {
       });
 });
 
+router.get('/test', function(req, res, next) {
+    res.render('index', {
+        "shows" : shows
+    });
+});
+
 
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
