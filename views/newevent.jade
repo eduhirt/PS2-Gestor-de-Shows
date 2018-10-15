@@ -22,7 +22,7 @@ block content
               .form-group.row
                 label.col-md-3.control-label(for='banda') Banda
                 .col-md-9
-                  textarea#banda.form-control(name='banda')
+                  input#banda.form-control.input-md(name='banda', placeholder='', required='', type='text')
               // Limite de pessoas
               .form-group.row
                 label.col-md-3.control-label(for='limit') Limite de pessoas
@@ -30,7 +30,7 @@ block content
                   input#limit.form-control.input-md(name='limit', placeholder='', required='', type='text')
             .col-md-4
               #publicar-evento-guia-nome
-                h4 Nome e descrição
+                h4 Descrição
           hr
           #data-evento
             .row
