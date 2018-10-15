@@ -5,3 +5,6 @@ block content
     h1.
       Show Page
     div #{show.name}
+      div
+        form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")
+          button(type="submit") Cadastrar no show

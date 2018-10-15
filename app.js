@@ -41,13 +41,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //AUTENTICAÇÃO
 app.use(cookieParser());
+
 app.use(require('express-session')({
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: false
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 // passport config
 var Account = require('./models/userSchema');
@@ -58,6 +58,9 @@ passport.use(new LocalStrategy(
         return cb(null, usr);
     });
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
   
 passport.serializeUser(function(user, done) {
   done(null, user);

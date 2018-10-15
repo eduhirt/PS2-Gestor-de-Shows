@@ -5,6 +5,7 @@ var Show = require('../models/showSchema.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    console.log(req.user)
     Show.find({}, function(err, shows) {
         console.log(shows);
         res.render('index', {
@@ -50,17 +51,13 @@ router.post('/adduser', function(req, res) {
     var db = req.db;
 
     // Get our form values. These rely on the "name" attributes
-    var userName = req.body.username;
+    var userCompleteName = req.body.usercompletename;
     var userEmail = req.body.useremail;
-
-    // Set our collection
-    //var collection = db.get('usercollection');
-
+    var userName = req.body.username;
+    var password = req.body.password;
 
 
-    // Submit to the DB
-    // create a new user called chris
-    var chris = new User({
+    var user = new User({
         name: userName,
         email: userEmail,
         password: 'password' 

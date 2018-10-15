@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Show = require('../models/showSchema.js');
 var passport = require('passport');
+var User = require('../models/userSchema.js');
 
 
 
@@ -78,13 +79,25 @@ router.delete('/:id/delete', require('connect-ensure-login').ensureLoggedIn(), f
 
 
 //Compra ingresso para o show - Dá update nas variáveis bought(Show) e shows(User)
-router.put('/:showid/:usrid/buy', require('connect-ensure-login').ensureLoggedIn(), function(req,res){
-  var show = Show.findByIdAndUpdate(req.params.showid, function(err,shw){
-    show.bought.push(req.params.usrid);
+router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), function(req,res){
+  req.user.forEach(usr => {
+    //console.log(usr.name);
+    //usr.shows.push(req.params.id);
+    //console.log(usr.shows);
+    User.findById(usr._id, function(err, user){
+      user.shows.push(req.params.id);
+      console.log(user)
+      user.save();
+    })
+
+    Show.findById(req.params.id, function(err,show){
+      console.log("Showwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+      console.log(show);
+      show.bought.push(usr._id);
+      console.log(show)
+      show.save();
+    });
   });
-  var usr = User.findByIdAndUpdate(req.params.usrid, function(err, user){
-    user.shows.push(req.params.showid);
-  })
 })
 
 

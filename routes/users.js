@@ -11,8 +11,9 @@ router.get('/register', function(req, res) {
 router.post('/register', function(req, res) {
   var db = req.db;
   var usr = new User({
-    username:  req.body.email,
-    email: req.body.email,
+    name: req.body.usercompletename,
+    username:  req.body.username,
+    email: req.body.useremail,
     password: req.body.password 
   });
   // call the built-in save method to save to the database
