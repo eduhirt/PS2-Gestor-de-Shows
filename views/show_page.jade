@@ -6,11 +6,13 @@ block content
       Show Page
     div #{show.name}
       div
-        form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")
+        form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
+          if (session.passport != undefined)
+            each user in session.passport.user
+              div #{user.name}
+              if (show.bought.includes(user._id))
+                p Cadastrado no Show!
 
-          if (show.bought.includes(user))
-            p Cadastrado no Show!
+              else
+                button(type="submit") Cadastrar no show
             
-          else
-            button(type="submit") Cadastrar no show
-            p #{user}

@@ -31,13 +31,8 @@ router.get('/:id', function(req, res){
   Show.findById(req.params.id, function(err, show) {
     console.log(show)
 
-    req.user.forEach(usr => {
-      var user = usr._id;
-    });
-
     res.render('show_page', {
         "show" : show,
-        "user": user
     });
   });
 })
@@ -116,6 +111,7 @@ router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), functi
       
     });
   });
+  res.redirect('/show/'+ req.params.id);
 })
 
 
