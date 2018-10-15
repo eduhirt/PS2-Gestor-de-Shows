@@ -31,6 +31,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -74,6 +76,10 @@ passport.deserializeUser(function(user, done) {
 app.use(function(req,res,next){
     req.db = db;
     next();
+});
+app.use(function(req,res,next){
+  res.locals.session = req.session;
+  next();
 });
 
 app.use('/', indexRouter);

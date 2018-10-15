@@ -85,17 +85,29 @@ router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), functi
     //usr.shows.push(req.params.id);
     //console.log(usr.shows);
     User.findById(usr._id, function(err, user){
-      user.shows.push(req.params.id);
-      console.log(user)
-      user.save();
+      if (!user.shows.includes(req.params.id)){
+        console.log("User:")
+        user.shows.push(req.params.id);
+        console.log(user)
+        user.save();
+      }
+      else{
+        console.log("user já cadastrado!")
+      }
     })
+    
 
     Show.findById(req.params.id, function(err,show){
-      console.log("Showwwwwwwwwwwwwwwwwwwwwwwwwwwww")
-      console.log(show);
-      show.bought.push(usr._id);
-      console.log(show)
-      show.save();
+      if (!show.bought.includes(usr._id)){
+        console.log("Show:")
+        show.bought.push(usr._id);
+        console.log(show)
+        show.save();
+      }
+      else{
+        console.log("user já cadastrado!")
+      }
+      
     });
   });
 })
