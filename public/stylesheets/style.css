@@ -25,15 +25,19 @@
 /* Geral */
 body{
 	font-family: "aleo" !important;
-	background-color: #e7dfdd !important;
+	background-image: url("https://www.backgroundimageshd.com/wp-content/uploads/2018/08/awesome-abstract-picture.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 h1{
 	text-align: center;
+	color: #fff !important;
 }
 h1.home{
 	color: #fff;
 	padding-top: 20px;
 }
+
 
 /* Navbar */
 .navbar-brand{
@@ -56,6 +60,10 @@ h1.home{
 }
 
 /* Arrumar esses WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw */
+.texto-negrito{
+	font-weight: bold;
+}
+
 .margin-top{
 	padding-top: 3%;
 }
@@ -64,10 +72,6 @@ h1.home{
 }
 .home-page{
 	border-radius: 5px;
-	background-image: url("https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
 	margin-top: 2%;
 	min-height: 100vh;
 }
@@ -101,8 +105,11 @@ a.link-login:hover{
 
 /* Publicar evento */
 #publicar-evento{
-	padding-top: 2%;
+	padding-top:2%;
+	margin-top: 2%;
 	min-height: 100vh;
+	background: #e7dfdd;
+	border-radius: 5px;
 }
 #form-evento{
 	margin-top: 3%;
@@ -182,7 +189,7 @@ a.link-shows{
 	color: #4717f6;
 }
 .main-div {
-	background: #fff none repeat scroll 0 0;
+	background: #e7dfdd none repeat scroll 0 0;
 	/* box-shadow: 0 0 0 0.1rem #4717f6; */
 	border-radius: 9px;
 	padding: 50px 70px 70px 71px;
@@ -195,4 +202,8 @@ p.description-show{
 	background: rgba(14, 11, 22,0.95) none repeat scroll 0 0;
 	border-radius: 4px;
 	padding: 50px 70px 70px 71px;
+}
+#inf-show{
+	margin-top: 7%;
+	text-align: center;
 }

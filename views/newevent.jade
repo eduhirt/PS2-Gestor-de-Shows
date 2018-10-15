@@ -1,8 +1,8 @@
 extends layout
 
 block content
+  h1.home Publicar evento
   #publicar-evento
-    h1 Publicar evento
     form.form-horizontal(name="addevento",method="post",action="/show/register")
       fieldset
         #form-evento
@@ -21,7 +21,7 @@ block content
               // Limite de pessoas
               .form-group.row
                 label.col-md-3.control-label(for='limit') Limite de pessoas
-                .col-md-9
+                .col-md-3
                   input#limit.form-control.input-md(name='limit', placeholder='', required='', type='text')
             .col-md-4
               #publicar-evento-guia-nome

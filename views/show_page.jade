@@ -2,18 +2,29 @@ extends layout
 
 block content
   .user-list
-    h1.
-      Show Page
-    div #{show.name}
-    div #{show.description}
-      div
-        form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
-          if (session.passport != undefined)
-            if (session.passport.user != undefined)
-              each user in session.passport.user
-                div #{user.name}
-                if (show.bought.includes(user._id))
-                  p Cadastrado no Show!
-                else
-                  button(type="submit") Cadastrar no show
+    .container
+      .row
+        .col-md-2
+        .col-md-8.main-div#inf-show
+          h2.texto-negrito.margin-top #{show.name}
+          p #{show.description}
+          p #{show.start}
+          p #{show.end}
+          p #{show.adress_number}
+          p #{show.adress_complement}
+          p #{show.adress_neighborhood}
+          p #{show.adress_city}
+          p #{show.adress_CEP}
+          p #{show.adress_state}
+          div
+            form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
+              if (session.passport != undefined)
+                if (session.passport.user != undefined)
+                  each user in session.passport.user
+                    div #{user.name}
+                    if (show.bought.includes(user._id))
+                      p Cadastrado no Show!
+                    else
+                      button(type="submit") Cadastrar no show
+        .col-md-2
             
