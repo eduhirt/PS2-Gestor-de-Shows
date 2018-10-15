@@ -12,11 +12,14 @@ block content
             div.col-md-10
               form(role='form', action="/login",method="post", style='max-width: 300px;')
                 .form-group
-                  label(for='formGroupExampleInput') Usuario
+                  label(for='formGroupExampleInput') Usuário
                   input.form-control(type='text', name="username", placeholder='')
                 .form-group
                   label(for='formGroupExampleInput') Senha
                   input.form-control(type='password', name="password", placeholder='')
                 button.btn.btn-primary(type='submit') Login
+                .form-group
+                  .nao-cadastrado
+                    a.link-login(href='/newuser') Não possui uma conta? Cadastre-se!
             div.col-md-1
         div.col-md-4
