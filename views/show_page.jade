@@ -6,16 +6,16 @@ block content
       .row
         .col-md-2
         .col-md-8.main-div#inf-show
-          h2.texto-negrito.margin-top #{show.name}
-          p #{show.description}
-          p #{show.start}
-          p #{show.end}
-          p #{show.adress_number}
-          p #{show.adress_complement}
-          p #{show.adress_neighborhood}
-          p #{show.adress_city}
-          p #{show.adress_CEP}
-          p #{show.adress_state}
+          div #{show.name}
+          div #{show.description}
+          div #{show.start}
+          div #{show.end}
+          div #{show.adress_number}
+          div #{show.adress_complement}
+          div #{show.adress_neighborhood}
+          div #{show.adress_city}
+          div #{show.adress_CEP}
+          div #{show.adress_state}
           div
             form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
               if (session.passport != undefined)

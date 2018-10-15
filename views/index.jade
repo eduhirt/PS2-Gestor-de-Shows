@@ -6,10 +6,10 @@ block content
     .container
       .row
         .col-md-2
-        .col-md-8.main-div-show
+        div.col-md-8
           ul
             each show in shows
-              div
+              div.main-div-show
                 a.link-shows(href="/show/#{show.id}") #{show.name}
                 p.description-show #{show.description}
         .col-md-2
