@@ -5,17 +5,19 @@ block content
     .container
       .row
         .col-md-2
-        .col-md-8.main-div#inf-show
-          div #{show.name}
-          div #{show.description}
-          div #{show.start}
-          div #{show.end}
-          div #{show.adress_number}
-          div #{show.adress_complement}
-          div #{show.adress_neighborhood}
-          div #{show.adress_city}
-          div #{show.adress_CEP}
-          div #{show.adress_state}
+        .col-md-8.main-div.margin-top
+          h2.texto-negrito.margin-top #{show.name}
+          p #{show.description}
+          p #{show.place}
+          p #{show.band}
+          p #{show.adress_number}
+          p #{show.adress_complement}
+          p #{show.adress_neighborhood}
+          p #{show.adress_city}
+          p #{show.adress_CEP}
+          p #{show.adress_state}
+          p Início: #{show.start}
+          p Término: #{show.end}
           div
             form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
               if (session.passport != undefined)
