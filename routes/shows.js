@@ -92,7 +92,7 @@ router.post('/register', require('connect-ensure-login').ensureLoggedIn(), funct
     created_by: req.user.name,
     start: req.body.inicio + "-" + req.body.horaInicio,
     end: req.body.termino + "-" + req.body.horaTermino,
-    band: req.body.band,
+    band: req.body.banda,
     place: req.body.local,
     address: req.body.rua,
     address_number: req.body.numero,
