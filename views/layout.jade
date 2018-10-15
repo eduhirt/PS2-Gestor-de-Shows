@@ -14,8 +14,8 @@ html
         ul.navbar-nav.mr-auto
           li.nav-item.margin-left
             a.nav-link(href='/') Eventos
-          form.form-inline.my-2.my-lg-0.margin-left
-            input.form-control.navbar-search.mr-sm-2(type='search', placeholder='Buscar evento', aria-label='Search')
+          form.form-inline.my-2.my-lg-0.margin-left(role='form', action="/show/search/",method="post")
+            input.form-control.navbar-search.mr-sm-2(type='text', placeholder='Buscar evento', name='search')
             button.btn.btn-primary.my-2.my-sm-0(type='submit') Buscar
         ul.navbar-nav.navbar-right
           li.nav-item
