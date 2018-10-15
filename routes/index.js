@@ -9,17 +9,20 @@ router.get('/', function(req, res, next) {
     Show.find({}, function(err, shows) {
         console.log(shows);
         res.render('index', {
-            "shows" : shows
+            "shows" : shows.reverse()
         });
       });
 });
 
 router.get('/test', function(req, res, next) {
-    res.render('index', {
-        "shows" : shows
+    res.render('test', {
     });
 });
 
+router.get('/sys', function(req, res, next) {
+    res.render('sys', {
+    });
+});
 
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
