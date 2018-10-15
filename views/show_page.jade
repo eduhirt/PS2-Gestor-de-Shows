@@ -8,7 +8,7 @@ block content
       div
         form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
           if (session.passport != undefined)
-            each user in session.user
+            each user in session.passport.user
               div #{user.name}
               
               if (show.bought.includes(user._id))
