@@ -25,9 +25,10 @@
 /* Geral */
 body{
 	font-family: "aleo" !important;
-	background-image: url("https://www.backgroundimageshd.com/wp-content/uploads/2018/08/awesome-abstract-picture.jpg");
+	background-image: url("https://media.istockphoto.com/videos/blue-gradient-texture-video-id461177054?s=640x640");
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 h1{
 	text-align: center;
@@ -37,7 +38,25 @@ h1.home{
 	color: #fff;
 	padding-top: 20px;
 }
-
+#sys{
+	margin-top: 7%;
+	min-height: 80vh;
+}
+#test{
+	margin-top: 7%;
+	min-height: 80vh;
+}
+h5.test{
+	font-weight: bold;
+}
+h3.sys{
+	font-weight: bold;
+}
+a.link-test{
+	color: #4717f6;
+	font-size: 25px;
+	float: center;
+}
 
 /* Navbar */
 .navbar-brand{
@@ -183,7 +202,7 @@ a.link-footer:hover{
 a.link-shows:hover{
 	text-decoration: none;
 	text-shadow: 1px #4717f6;
-	color: #777;
+	color: #0064c1;
 }
 a.link-shows{
 	font-size: 30px !important;
