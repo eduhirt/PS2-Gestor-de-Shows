@@ -39,7 +39,7 @@ router.get('/:id', function(req, res){
 
 router.post('/search', function(req, res){
   var shows = [];
-  console.log("SHOWSSSSSSSSSSSSSSSSSSSSSSS");
+  console.log("PESQUISA DE SHOWSS::");
   Show.find({}, function(err, showsArray) {
     showsArray.forEach(show => {
       if (show.name.includes(req.body.search)){
@@ -72,9 +72,16 @@ router.post('/search', function(req, res){
       }
       
     });
-    console.log(shows); 
-    res.render('showlist', {
-      "shows" : shows,
+    var shows_filtered = [];
+    shows.forEach(show => {
+      if (!shows_filtered.includes(show)){
+        console.log(shows_filtered);
+        shows_filtered.push(show);
+      }
+    });
+
+    res.render('index', {
+      "shows" : shows_filtered,
     });
   });
 })
