@@ -3,17 +3,20 @@ extends layout
 block content
   .home-page
     h1.home Lista de eventos
-    .container
-      .row
-        .col-md-2
-        div.col-md-8
-          ul
-            each show in shows
-              div.main-div-show
-                a.link-shows(href="/show/#{show.id}") #{show.name}
-                p.description-show #{show.description}
-                p.description-show Local: #{show.place}
-        .col-md-2
+    
+    #main
+      .inner
+        // Boxes
+        .thumbnails
+          each show in shows
+            .box
+              a.image.fit(href="/show/#{show.id}") 
+                img(src='images/pic05.jpg', alt='')
+              .inner
+                h3 #{show.name}
+                p
+                  | #{show.description}
+                a.button.fit(href="/show/#{show.id}") Veja Mais
 
 
 

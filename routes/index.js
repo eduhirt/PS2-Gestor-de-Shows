@@ -19,6 +19,11 @@ router.get('/test', function(req, res, next) {
     });
 });
 
+router.get('/pagina_teste', function(req, res, next) {
+    res.render('pagina_teste', {
+    });
+});
+
 router.get('/sys', function(req, res, next) {
     res.render('sys', {
     });
