@@ -42,8 +42,10 @@ router.post('/search', function(req, res){
   console.log("PESQUISA DE SHOWSS::");
   Show.find({}, function(err, showsArray) {
     showsArray.forEach(show => {
-      if (show.name.includes(req.body.search)){
-        shows.push(show);
+      if(show.name != undefined){
+        if (show.name.includes(req.body.search)){
+          shows.push(show);
+        }
       }
       if(show.description != undefined){
         if (show.description.includes(req.body.search)){
