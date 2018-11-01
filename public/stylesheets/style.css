@@ -93,6 +93,7 @@ button,
 	button:hover,
 	.button:hover {
 		background-color: #f5f5f5;
+		text-decoration: none;
 	}
 
 	input[type="submit"]:active,
