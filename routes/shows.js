@@ -81,7 +81,7 @@ router.post('/search', function(req, res){
     });
 
     res.render('index', {
-      "shows" : shows_filtered,
+      "shows" : shows_filtered.reverse(),
     });
   });
 })
