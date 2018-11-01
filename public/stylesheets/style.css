@@ -7,6 +7,9 @@
 	src: url(../fonts/Lora-Bold.ttf);
 
 }
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 @media only screen and (max-width: 767px) {
 	#publicar-evento-guia-nome{
 		display:none;
@@ -68,10 +71,11 @@ button,
 	-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	background-color: #70c7be;
-	border-radius: 4px;
-	border: 0;
-	color: #ffffff !important;
+	background-color: #ffffff;
+	border-radius: 0;
+	border: solid 1px;
+	border-color: #a6a6a6;
+	color: #000000 !important;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: 400;
@@ -88,7 +92,7 @@ button,
 	input[type="button"]:hover,
 	button:hover,
 	.button:hover {
-		background-color: #82cec6;
+		background-color: #f5f5f5;
 	}
 
 	input[type="submit"]:active,
@@ -96,7 +100,7 @@ button,
 	input[type="button"]:active,
 	button:active,
 	.button:active {
-		background-color: #5ec0b6;
+		background-color: #f5f5f5;
 	}
 
 	input[type="submit"].icon,
@@ -316,7 +320,7 @@ button,
 .box {
 	border-radius: 4px;
 	margin-bottom: 2em;
-	background: #2c2c32;
+	background: white;
 	text-align: center;
 }
 
@@ -426,15 +430,12 @@ table {
 
 /* Geral */
 body{
-	font-family: "aleo" !important;
-	background-image: url("https://media.istockphoto.com/videos/blue-gradient-texture-video-id461177054?s=640x640");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	font-family: 'Poppins', sans-serif !important;
+	background-color: #f2f2f2 !important;
 }
 h1{
 	text-align: center;
-	color: #fff !important;
+	color: #000 !important;
 }
 h1.home{
 	color: #fff;
@@ -459,6 +460,24 @@ a.link-test{
 	font-size: 25px;
 	float: center;
 }
+p{
+	color:#a6a6a6;
+	font-style: italic;
+}
+
+h3{
+	font-style: bold;
+}
+
+.back_img{
+	margin-top: -79px;
+	height: 400px;
+	width: 100%;
+	background-image: url("../images/back.jpg");
+	background-position: center;
+	background-size: cover;
+
+}
 
 /* Navbar */
 .navbar-brand{
@@ -477,7 +496,7 @@ a.link-test{
  	 color: #4717f6;
 }
 .navbar-color{
-	background-color: #0e0b16;
+	background-color: transparent;
 }
 
 /* Arrumar esses WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWw */
