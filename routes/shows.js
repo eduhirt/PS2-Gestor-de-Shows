@@ -39,36 +39,35 @@ router.get('/:id', function(req, res){
 
 router.post('/search', function(req, res){
   var shows = [];
-  console.log("PESQUISA DE SHOWSS::");
   Show.find({}, function(err, showsArray) {
     showsArray.forEach(show => {
       if(show.name != undefined){
-        if (show.name.includes(req.body.search)){
+        if (show.name.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
       if(show.description != undefined){
-        if (show.description.includes(req.body.search)){
+        if (show.description.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
       if(show.place != undefined){
-        if (show.place.includes(req.body.search)){
+        if (show.place.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
       if(show.band != undefined){
-        if (show.band.includes(req.body.search)){
+        if (show.band.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
       if(show.address_city != undefined){
-        if (show.address_city.includes(req.body.search)){
+        if (show.address_city.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
       if(show.address_state != undefined){
-        if (show.address_state.includes(req.body.search)){
+        if (show.address_state.toLowerCase().includes(req.body.search.toLowerCase())){
           shows.push(show);
         }
       }
