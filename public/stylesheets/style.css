@@ -484,18 +484,18 @@ h3{
 .navbar-brand{
 	font-family: "lora", serif !important;
 	font-size: 30px !important;
-	color: #333;
+	color: #FFF;
 }
 .navbar-brand:hover, .navbar-brand:active{
-	color: #555;
+	color: #87CEEB;
 }
 .navbar-custom .navbar-nav .nav-link {
 	font-size: 18px;
-	color: #333;
+	color: #87CEEB;
 }
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
- 	 color: #555;
+ 	 color: #87CEEB;
 }
 .navbar-color{
 	background-color:transparent;
