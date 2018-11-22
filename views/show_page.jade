@@ -35,17 +35,17 @@ block content
               p.texto-negrito.texto-direita Término:
             .col-md-10
               p #{show.end}
-          div.botao-cadastro.margin-top
-            form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
-              if (session.passport != undefined)
-                if (session.passport.user != undefined)
-                  each user in session.passport.user
-                    if (show.bought.includes(user._id))
-                      p Cadastrado no evento!
-                    else
-                      button.btn.btn-primary(type="submit") Cadastrar no evento
-              else
-                .row
+          .row
+            div.botao-cadastro.margin-top(style="width: 100%;")
+              form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
+                if (session.passport != undefined)
+                  if (session.passport.user != undefined)
+                    each user in session.passport.user
+                      if (show.bought.includes(user._id))
+                        p Cadastrado no evento!
+                      else
+                        button.btn.btn-primary(type="submit", style="margin-bottom: 20px;", onClick="location.reaload(true)") Cadastrar no evento
+                else
                   a.cadastro(href="/login") Faça login para se cadastrar no show!
         .col-md-2
             
