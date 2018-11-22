@@ -5,6 +5,8 @@ html
     link(rel='shortcut icon', href='/images/top.png')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+
   body
     nav.navbar.navbar-expand-md.navbar-custom.navbar-color.navbar-fixed-top
       a.navbar-brand(href='/') EVENTOP
@@ -14,9 +16,12 @@ html
         ul.navbar-nav.mr-auto
           li.nav-item.margin-left
             a.nav-link(href='/') Eventos
-          form.form-inline.my-2.my-lg-0.margin-left(role='form', action="/show/search/",method="post")
-            input.form-control.navbar-search.mr-sm-2(type='text', placeholder='Buscar evento', name='search')
-            button.btn.btn-primary.my-2.my-sm-0(type='submit') Buscar
+          form.navbar-form(role='form', action="/show/search/",method="post")
+            .input-group
+              input.form-control(type='text', placeholder='Buscar evento', name='search')
+              .input-group-btn
+                button.btn.btn-default(type='submit')
+                  i.fas.fa-search
         ul.navbar-nav.navbar-right
           li.nav-item
             a.nav-link(href='/newevent') Publicar evento
