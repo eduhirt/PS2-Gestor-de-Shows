@@ -29,8 +29,6 @@ router.get('/register', function(req, res) {
 
 router.get('/:id', function(req, res){
   Show.findById(req.params.id, function(err, show) {
-    console.log(show)
-
     res.render('show_page', {
         "show" : show,
     });
@@ -132,9 +130,6 @@ router.delete('/:id/delete', require('connect-ensure-login').ensureLoggedIn(), f
 //Compra ingresso para o show - Dá update nas variáveis bought(Show) e shows(User)
 router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), function(req,res){
   req.user.forEach(usr => {
-    //console.log(usr.name);
-    //usr.shows.push(req.params.id);
-    //console.log(usr.shows);
     User.findById(usr._id, function(err, user){
       if (!user.shows.includes(req.params.id)){
         console.log("User:")
@@ -150,18 +145,15 @@ router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), functi
 
     Show.findById(req.params.id, function(err,show){
       if (!show.bought.includes(usr._id)){
-        console.log("Show:")
         show.bought.push(usr._id);
-        console.log(show)
         show.save();
       }
       else{
         console.log("user já cadastrado!")
       }
-      
+      res.redirect("/show/"+req.params.id);
     });
   });
-  res.redirect('/show/'+ req.params.id);
 })
 
 
