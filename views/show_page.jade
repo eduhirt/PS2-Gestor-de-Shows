@@ -34,7 +34,7 @@ block content
             .col-md-2
               p.texto-negrito.texto-direita Término:
             .col-md-10
-              p #{show.end}
+              p Dia #{show.end.getDay()}/#{show.end.getMonth()}, às #{show.end.getHours()}:0#{show.end.getMinutes()}h
           .row
             div.botao-cadastro.margin-top(style="width: 100%;")
               form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  

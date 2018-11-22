@@ -141,8 +141,6 @@ router.post('/:id/buy', require('connect-ensure-login').ensureLoggedIn(), functi
         console.log("user já cadastrado!")
       }
     })
-    
-
     Show.findById(req.params.id, function(err,show){
       if (!show.bought.includes(usr._id)){
         show.bought.push(usr._id);
