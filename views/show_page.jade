@@ -1,16 +1,17 @@
 extends layout
 
 block content
-  .user-list
-    .container
+  .show_page
+    .container-fluid
       .row
-        .col-md-2
-        .col-md-8.main-div.margin-top
+        .col-md-3
+        .col-md-6.show_container
+          img(src='/images/pic05.jpg', alt='pic').img_banner
           h2.margin-left.texto-negrito #{show.name}
           p.margin-left #{show.description}
           .row 
             .col-md-2
-              p.texto-negrito.texto-direita Banda:
+              p.texto-negrito.texto-direita Banda(s):
             .col-md-10
               p #{show.band}
           .row 
@@ -20,9 +21,15 @@ block content
               p #{show.place}
           .row 
             .col-md-2
+              p.texto-negrito.texto-direita Endereço:
+            .col-md-10
+              p #{show.address}, nº #{show.address_number}, #{show.address_complement}
+
+          .row 
+            .col-md-2
               p.texto-negrito.texto-direita Início:
             .col-md-10
-              p #{show.start}
+              p Dia #{show.start.getDay()}/#{show.start.getMonth()}, às #{show.start.getHours()}:0#{show.start.getMinutes()}h
           .row 
             .col-md-2
               p.texto-negrito.texto-direita Término:
@@ -37,5 +44,8 @@ block content
                       p Cadastrado no evento!
                     else
                       button.btn.btn-primary(type="submit") Cadastrar no evento
+              else
+                .row
+                  a.cadastro(href="/login") Faça login para se cadastrar no show!
         .col-md-2
             
