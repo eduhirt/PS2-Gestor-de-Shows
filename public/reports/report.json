@@ -1,0 +1,45 @@
+{
+    "title" : {
+        "text": "Survey Responses",
+        "subtext": "responses by question"
+    },
+    "tooltip" : {
+        "trigger": "axis"
+    },
+    "legend": {
+        "data":["#responses"]
+    },
+    "toolbox": {
+        "show" : false
+    },
+    "calculable" : true,
+    "xAxis" : [
+        {
+            "type" : "category",
+            "data" : ["cat1","cat2","cat3","cat4"]
+        }
+    ],
+    "yAxis" : [
+        {
+            "type" : "value"
+        }
+    ],
+    "series" : [
+        {
+            "name":"#responses",
+            "type":"bar",
+            "data":[2.0, 4.9, 7.0, 23.2],
+            "markPoint" : {
+                "data" : [
+                    {"type" : "max", "name": "Most answered"},
+                    {"type" : "min", "name": "Least answered"}
+                ]
+            },
+            "markLine" : {
+                "data" : [
+                    {"type" : "average", "name": "average"}
+                ]
+            }
+        }
+    ]
+}        

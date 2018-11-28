@@ -6,10 +6,13 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "chart.js": "^2.7.3",
+    "clone": "^2.1.2",
     "connect-ensure-login": "^0.1.1",
     "cookie": "^0.3.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "echarts": "^4.2.0-rc.2",
     "express": "~4.16.0",
     "express-session": "^1.15.6",
     "http-errors": "~1.6.2",

@@ -99,10 +99,22 @@ router.post('/adduser', function(req, res) {
     */
 });
 
+var responses_x_questions = require('../public/reports/report.json');  
+var clone = require('clone');  
+var echarts = require('echarts');
+
 
 /* PÁGINA TESTE DE ADMINISTRADOR */
-router.get('/admin', require('connect-ensure-login').ensureLoggedIn(), function(req, res) {
-    res.render('admin', { title: 'Admin Page' });
+router.get('/admin', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
+    var chartOptions = clone(responses_x_questions);
+    console.log(chartOptions);
+
+    var categories = ["newCat1","newCat2","newCat3","newCat4","newCat5"];
+
+    chartOptions.xAxis[0].data = categories;
+    chartOptions.series[0].data = [10,20,30,40,50];
+
+    res.render('admin', { title: 'Admin Page', data: JSON.stringify(chartOptions) });
 });
 
 
