@@ -4,6 +4,12 @@ html, body, #container {
     margin: 0;
     padding: 0;
 }
+#page-login{
+	margin-bottom: 10%;
+}
+.criar-conta{
+	margin-bottom: 10%;
+}
 
 
 @font-face {
