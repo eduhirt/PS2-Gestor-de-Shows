@@ -95,7 +95,7 @@ router.post('/register', require('connect-ensure-login').ensureLoggedIn(), funct
   var show = new Show({
     name: req.body.textinput,
     description: req.body.descricao,
-    created_by: req.session.passport.user[0].name,
+    created_by: req.session.passport.user[0]._id,
     start: req.body.inicio + "T" + req.body.horaInicio,
     end: req.body.termino + "T" + req.body.horaTermino,
     band: req.body.banda,

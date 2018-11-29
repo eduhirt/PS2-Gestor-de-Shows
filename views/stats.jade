@@ -1,0 +1,122 @@
+doctype html
+html
+  head
+    title Eventop - Plataforma de Shows
+    link(rel='shortcut icon', href='/images/top.png')
+    link(rel='stylesheet', href='/stylesheets/admin.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
+    link#bootstrap-css(href='//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')  
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='/vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/animate/animate.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/select2/select2.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/perfect-scrollbar/perfect-scrollbar.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/util.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+
+
+
+block content
+.row
+  // uncomment code for absolute positioning tweek see top comment in css
+  // <div class="absolute-wrapper"> </div>
+  // Menu
+  .side-menu
+    nav#sidemenu.navbar(role='navigation')
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        .brand-wrapper
+          // Hamburger
+          button.navbar-toggle(type='button')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          // Brand
+          .brand-name-wrapper
+            a#brand.navbar-brand(href='/')
+              | EVENTOP
+          // Search
+          // Search body
+          #search.panel-collapse.collapse
+            .panel-body
+              form.navbar-form(role='search')
+                .form-group
+                  input.form-control(type='text', placeholder='Search')
+                button.btn.btn-default(type='submit')
+                  span.glyphicon.glyphicon-ok
+      // Main Menu
+      .side-menu-container(style='width:100%; margin-top:20%;')
+        ul.nav.navbar-nav(style='width:100%;')
+          li
+            a(href='/admin')
+              span.glyphicon.glyphicon-home
+              |  Página Inicial
+          li
+            a(href='/admin/stats')
+              span.glyphicon.glyphicon-music
+              |  Meus shows
+          li
+            a(href='/newevent')
+              span.glyphicon.glyphicon-plus
+              |  Publicar novo evento
+          li
+            a(href='/')
+              span.glyphicon.glyphicon-arrow-left
+              |  Voltar para o site
+          li
+            a(href='/logout')
+              span.glyphicon.glyphicon-undo
+              |  Logout
+      // /.navbar-collapse
+      // Main Content
+  
+  
+  .container-fluid(style="background-color:white")
+    .side-body
+      h1(style="font-weight: bolder; margin-top: 40px;") Meus shows:
+      each show in shows
+        if (show.created_by != undefined)
+          if (show.created_by == usr._id)
+            h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") #{ show.name }:
+            .graph
+              script.
+                window.onload = function () {
+                var chart = new CanvasJS.Chart("chartContainer", {
+                  animationEnabled: true,
+                  theme: "light1", // "light1", "light2", "dark1", "dark2"
+
+                  title:{
+                    text: "Lotação"
+                  },
+
+                  axisY: {
+                    title: "Reserves(MMbbl)"
+                  },
+
+                  data: [{
+                    type: "doughnut",
+                    startAngle: 60,
+                    innerRadius: 60,
+                    indexLabelFontSize: 17,
+                    indexLabel: "{label} - #percent%",
+                    toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                    dataPoints: [
+                      { y: #{ show.crowd_limit }, label: "Limite de pessoas" },
+                      { y: #{ show.bought.length }, label: "Ingressos compratos" }
+                    ]
+                  }]
+                });
+                chart.render();
+                }
+              #chartContainer(style='height: 100%; width: 100%;')
+              script(src='https://canvasjs.com/assets/script/canvasjs.min.js')
+
+    script(src='/vendor/jquery/jquery-3.2.1.min.js')
+    script(src='/vendor/bootstrap/js/popper.js')
+    script(src='/vendor/bootstrap/js/bootstrap.min.js')
+    script(src='/vendor/select2/select2.min.js')
+    script(src='/scripts/main.js')

@@ -25,6 +25,8 @@ html
                   i.fas.fa-search
         ul.navbar-nav.navbar-right
           li.nav-item
+            a.nav-link(href='/admin') Página de administrador
+          li.nav-item
             a.nav-link(href='/newevent') Publicar evento
           if (session.passport != undefined)
             if ( session.passport.user == undefined )

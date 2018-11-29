@@ -56,7 +56,7 @@ block content
               span.glyphicon.glyphicon-home
               |  Página Inicial
           li
-            a(href='/myshows')
+            a(href='/admin/stats')
               span.glyphicon.glyphicon-music
               |  Meus shows
           li
@@ -64,20 +64,47 @@ block content
               span.glyphicon.glyphicon-plus
               |  Publicar novo evento
           li
-            a(href='/admin/stats')
-              span.glyphicon.glyphicon-stats
-              |  Estatísticas
+            a(href='/')
+              span.glyphicon.glyphicon-arrow-left
+              |  Voltar para o site
           li
             a(href='/logout')
               span.glyphicon.glyphicon-undo
               |  Logout
       // /.navbar-collapse
       // Main Content
+  
+  
   .container-fluid(style="background-color:white")
     .side-body
-      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Shows que está cadastrado:
+      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Meus shows:
       .limiter
-        .container-table100(style="background-color: white !important")
+        .container-table100(style="background-color: white !important; min-height:0;")
+          .wrap-table100
+            .table100.ver5.m-b-110
+              table(data-vertable='ver1', style="background-color:#d1d1d1")
+                thead
+                  tr.row100.head
+                    th.column100.column1(data-column='column1') Nome
+                    th.column100.column2(data-column='column2') Data
+                    th.column100.column2(data-column='column3') Pessoas confirmadas
+                  each show in shows
+                    if (show.created_by != undefined)
+                      if (show.created_by == usr._id)
+                        tbody
+                          tr.row100
+                            td.column100.column1(data-column='column1') 
+                              a(href="/show/"+show._id) #{ show.name }
+                            td.column100.column2(data-column='column2') #{show.start.getDay()}/#{show.start.getMonth()}, às #{show.start.getHours()}:0#{show.start.getMinutes()}h
+                            td.column100.column2(data-column='column2') #{ show.bought.length }
+
+
+
+
+
+      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Shows que estou cadastrado:
+      .limiter
+        .container-table100(style="background-color: white !important;min-height:0;")
           .wrap-table100
             .table100.ver5.m-b-110
               table(data-vertable='ver1', style="background-color:#d1d1d1")
@@ -91,7 +118,8 @@ block content
                       if (show._id == showusr)
                         tbody
                           tr.row100
-                            td.column100.column1(data-column='column1') #{ show.name }
+                            td.column100.column1(data-column='column1') 
+                              a(href="/show/"+show._id) #{ show.name }
                             td.column100.column2(data-column='column2') #{show.start.getDay()}/#{show.start.getMonth()}, às #{show.start.getHours()}:0#{show.start.getMinutes()}h
                             td.column100.column2(data-column='column2') #{ show.bought.length }
 
@@ -120,8 +148,9 @@ block content
               indexLabel: "{label} - #percent%",
               toolTipContent: "<b>{label}:</b> {y} (#percent%)",
               dataPoints: [
-                { y: 67, label: "Shows que participo" },
-                { y: 28, label: "Total de shows" },
+                { y: #{ shows.length }, label: "Inbox" },
+                { y: 45, label: "Archives" }
+              ]
             }]
           });
           chart.render();

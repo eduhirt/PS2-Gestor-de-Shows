@@ -1,136 +1,137 @@
 extends layout
 
 block content
-  h1.home Publicar evento
-  #publicar-evento
-    form.form-horizontal(name="addevento",method="post",action="/show/register")
-      fieldset
-        #form-evento
+  div(style= "background-color:#b4b4c1;")
+    h1.home Publicar evento
+    #publicar-evento
+      form.form-horizontal(name="addevento",method="post",action="/show/register")
+        fieldset
+          #form-evento
+            .row
+              .col-md-8
+                // Nome do evento
+                .form-group.row
+                  label.col-md-3.control-label(for='textinput') Nome do evento
+                  .col-md-9
+                    input#textinput.form-control.input-md(name='textinput', placeholder='', required='', type='text')
+                // Descricao
+                .form-group.row
+                  label.col-md-3.control-label(for='descricao') Descrição do evento
+                  .col-md-9
+                    textarea#descricao.form-control(name='descricao')
+                // Banda
+                .form-group.row
+                  label.col-md-3.control-label(for='banda') Banda
+                  .col-md-9
+                    input#banda.form-control.input-md(name='banda', placeholder='', required='', type='text')
+                // Limite de pessoas
+                .form-group.row
+                  label.col-md-3.control-label(for='limit') Limite de pessoas
+                  .col-md-3
+                    input#limit.form-control.input-md(name='limit', placeholder='', required='', type='text')
+              .col-md-4
+                #publicar-evento-guia-nome
+                  h4 Descrição
+            hr
+            #data-evento
+              .row
+                .col-md-8
+                  // Data inicio
+                  .form-group.row
+                    label.col-md-3.control-label(for='inicio') Início
+                    .col-md-5
+                      input#inicio.form-control.input-md(name='inicio', placeholder='', required='', type='date')
+                    // Hora inicio
+                    label.col-md-1.control-label(for='horaInicio') Hora
+                    .col-md-3
+                      input#horaInicio.form-control.input-md(name='horaInicio', placeholder='', required='', type='time')
+                  // Data termino
+                  .form-group.row
+                    label.col-md-3.control-label(for='termino') Término
+                    .col-md-5
+                      input#termino.form-control.input-md(name='termino', placeholder='', required='', type='date')
+                    // Hora termino
+                    label.col-md-1.control-label(for='horaTermino') Hora
+                    .col-md-3
+                      input#horaTermino.form-control.input-md(name='horaTermino', placeholder='', required='', type='time')
+                .col-md-4
+                  #publicar-evento-guia-data
+                    h4 Data
+            hr
+            #local-evento
+              .row
+                .col-md-8
+                  // Local
+                  .form-group.row
+                    label.col-md-3.control-label(for='local') Local
+                    .col-md-9
+                      input#local.form-control.input-md(name='local', placeholder='', required='', type='text')
+                  // CEP
+                  .form-group.row
+                    label.col-md-3.control-label(for='cep') CEP
+                    .col-md-9
+                      input#cep.form-control.input-md(name='cep', placeholder='', type='text')
+                  // Rua
+                  .form-group.row
+                    label.col-md-3.control-label(for='rua') Av/Rua
+                    .col-md-9
+                      input#rua.form-control.input-md(name='rua', placeholder='', required='', type='text')
+                  // Numero
+                  .form-group.row
+                    label.col-md-3.control-label(for='numero') Número
+                    .col-md-9
+                      input#numero.form-control.input-md(name='numero', placeholder='', required='', type='text')
+                  // Complemento
+                  .form-group.row
+                    label.col-md-3.control-label(for='complemento') Complemento
+                    .col-md-9
+                      input#complemento.form-control.input-md(name='complemento', placeholder='', type='text')
+                  // Bairro
+                  .form-group.row
+                    label.col-md-3.control-label(for='bairro') Bairro
+                    .col-md-9
+                      input#bairro.form-control.input-md(name='bairro', placeholder='', required='', type='text')
+                  // Cidade
+                  .form-group.row
+                    label.col-md-3.control-label(for='cidade') Cidade
+                    .col-md-9
+                      input#cidade.form-control.input-md(name='cidade', placeholder='', required='', type='text')
+                  // Estado
+                  .form-group.row
+                    label.col-md-3.control-label(for='estado') Estado
+                    .col-md-5
+                      select#estado.form-control(name='estado')
+                        option(value='AC') AC
+                        option(value='AL') AL
+                        option(value='AP') AP
+                        option(value='AM') AM
+                        option(value='BA') BA
+                        option(value='CE') CE
+                        option(value='DF') DF
+                        option(value='ES') ES
+                        option(value='GO') GO
+                        option(value='MA') MA
+                        option(value='MT') MT
+                        option(value='MS') MS
+                        option(value='MG') MG
+                        option(value='PA') PA
+                        option(value='PB') PB
+                        option(value='PR') PR
+                        option(value='PI') PI
+                        option(value='RJ') RJ
+                        option(value='RN') RN
+                        option(value='RS') RS
+                        option(value='RO') RO
+                        option(value='RR') RR
+                        option(value='SC') SC
+                        option(value='SP') SP
+                        option(value='SE') SE
+                        option(value='TO') TO
+                .col-md-4
+                  #publicar-evento-guia-local
+                    h4 Local      
           .row
-            .col-md-8
-              // Nome do evento
-              .form-group.row
-                label.col-md-3.control-label(for='textinput') Nome do evento
-                .col-md-9
-                  input#textinput.form-control.input-md(name='textinput', placeholder='', required='', type='text')
-              // Descricao
-              .form-group.row
-                label.col-md-3.control-label(for='descricao') Descrição do evento
-                .col-md-9
-                  textarea#descricao.form-control(name='descricao')
-              // Banda
-              .form-group.row
-                label.col-md-3.control-label(for='banda') Banda
-                .col-md-9
-                  input#banda.form-control.input-md(name='banda', placeholder='', required='', type='text')
-              // Limite de pessoas
-              .form-group.row
-                label.col-md-3.control-label(for='limit') Limite de pessoas
-                .col-md-3
-                  input#limit.form-control.input-md(name='limit', placeholder='', required='', type='text')
-            .col-md-4
-              #publicar-evento-guia-nome
-                h4 Descrição
-          hr
-          #data-evento
-            .row
-              .col-md-8
-                // Data inicio
-                .form-group.row
-                  label.col-md-3.control-label(for='inicio') Início
-                  .col-md-5
-                    input#inicio.form-control.input-md(name='inicio', placeholder='', required='', type='date')
-                  // Hora inicio
-                  label.col-md-1.control-label(for='horaInicio') Hora
-                  .col-md-3
-                    input#horaInicio.form-control.input-md(name='horaInicio', placeholder='', required='', type='time')
-                // Data termino
-                .form-group.row
-                  label.col-md-3.control-label(for='termino') Término
-                  .col-md-5
-                    input#termino.form-control.input-md(name='termino', placeholder='', required='', type='date')
-                  // Hora termino
-                  label.col-md-1.control-label(for='horaTermino') Hora
-                  .col-md-3
-                    input#horaTermino.form-control.input-md(name='horaTermino', placeholder='', required='', type='time')
-              .col-md-4
-                #publicar-evento-guia-data
-                  h4 Data
-          hr
-          #local-evento
-            .row
-              .col-md-8
-                // Local
-                .form-group.row
-                  label.col-md-3.control-label(for='local') Local
-                  .col-md-9
-                    input#local.form-control.input-md(name='local', placeholder='', required='', type='text')
-                // CEP
-                .form-group.row
-                  label.col-md-3.control-label(for='cep') CEP
-                  .col-md-9
-                    input#cep.form-control.input-md(name='cep', placeholder='', type='text')
-                // Rua
-                .form-group.row
-                  label.col-md-3.control-label(for='rua') Av/Rua
-                  .col-md-9
-                    input#rua.form-control.input-md(name='rua', placeholder='', required='', type='text')
-                // Numero
-                .form-group.row
-                  label.col-md-3.control-label(for='numero') Número
-                  .col-md-9
-                    input#numero.form-control.input-md(name='numero', placeholder='', required='', type='text')
-                // Complemento
-                .form-group.row
-                  label.col-md-3.control-label(for='complemento') Complemento
-                  .col-md-9
-                    input#complemento.form-control.input-md(name='complemento', placeholder='', type='text')
-                // Bairro
-                .form-group.row
-                  label.col-md-3.control-label(for='bairro') Bairro
-                  .col-md-9
-                    input#bairro.form-control.input-md(name='bairro', placeholder='', required='', type='text')
-                // Cidade
-                .form-group.row
-                  label.col-md-3.control-label(for='cidade') Cidade
-                  .col-md-9
-                    input#cidade.form-control.input-md(name='cidade', placeholder='', required='', type='text')
-                // Estado
-                .form-group.row
-                  label.col-md-3.control-label(for='estado') Estado
-                  .col-md-5
-                    select#estado.form-control(name='estado')
-                      option(value='AC') AC
-                      option(value='AL') AL
-                      option(value='AP') AP
-                      option(value='AM') AM
-                      option(value='BA') BA
-                      option(value='CE') CE
-                      option(value='DF') DF
-                      option(value='ES') ES
-                      option(value='GO') GO
-                      option(value='MA') MA
-                      option(value='MT') MT
-                      option(value='MS') MS
-                      option(value='MG') MG
-                      option(value='PA') PA
-                      option(value='PB') PB
-                      option(value='PR') PR
-                      option(value='PI') PI
-                      option(value='RJ') RJ
-                      option(value='RN') RN
-                      option(value='RS') RS
-                      option(value='RO') RO
-                      option(value='RR') RR
-                      option(value='SC') SC
-                      option(value='SP') SP
-                      option(value='SE') SE
-                      option(value='TO') TO
-              .col-md-4
-                #publicar-evento-guia-local
-                  h4 Local      
-        .row
-          .col-md-2
-          .col-md-3
-            button.btn.btn-primary.mb-4.btn-block(type="submit") Publicar
+            .col-md-2
+            .col-md-3
+              button.btn.btn-primary.mb-4.btn-block(type="submit") Publicar
 

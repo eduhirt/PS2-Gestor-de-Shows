@@ -125,4 +125,24 @@ router.get('/admin', require('connect-ensure-login').ensureLoggedIn(), function(
 });
 
 
+router.get('/admin/stats', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
+    var db = req.db;
+    User.find({}, function(err, users) {
+        Show.find({}, function(err, shows) {
+            console.log(req.session.passport.user);
+            var user_shows = req.session.passport.user[0].shows;
+            var user = req.session.passport.user[0];
+
+
+            res.render('stats', {
+                "shows" : shows.reverse(),
+                "users" : users,
+                "user_shows" : user_shows,
+                "usr" : user
+            });
+        });
+    });
+});
+
+
 module.exports = router;

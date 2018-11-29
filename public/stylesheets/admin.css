@@ -1,6 +1,9 @@
 .graph{
     height:300px;
-    width: 50%;
+		width: 97%;
+		padding-bottom: 50px;
+		border-bottom: solid 1px;
+		color: #a5a5a5;
 }
 
 #brand{
