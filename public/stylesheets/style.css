@@ -578,7 +578,7 @@ nav{
 	text-decoration: none !important;
 }
 a.link-login:hover{
-	color: #0e0b16 !important;
+	text-decoration: underline !important;
 }
 .form-pesquisa{
 	margin-top: 6%;
@@ -625,6 +625,7 @@ a.link-login:hover{
 	background-color: #fff !important;
 	color: #031430 !important;
 	border-color: #ccc !important;
+	box-shadow: none !important;
 }
 .btn.btn-default:hover, .btn.btn-default:active{
 	border-color: #031430 !important;
@@ -634,6 +635,7 @@ a.link-login:hover{
 	border: solid 1px #fff !important;
 	color: #fff !important;
 	border-radius: 1px !important;
+	box-shadow: none !important;
 }
 .btn.btn-primary:hover{
 	background-color: #fff !important;
