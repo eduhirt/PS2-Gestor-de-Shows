@@ -123,41 +123,6 @@ block content
                             td.column100.column2(data-column='column2') #{show.start.getDay()}/#{show.start.getMonth()}, às #{show.start.getHours()}:0#{show.start.getMinutes()}h
                             td.column100.column2(data-column='column2') #{ show.bought.length }
 
-
-      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Dados:
-      .graph
-        script.
-          window.onload = function () {
-          var chart = new CanvasJS.Chart("chartContainer", {
-            animationEnabled: true,
-            theme: "light1", // "light1", "light2", "dark1", "dark2"
-
-            title:{
-              text: "Usuários cadastrados"
-            },
-
-            axisY: {
-              title: "Reserves(MMbbl)"
-            },
-
-            data: [{
-              type: "doughnut",
-              startAngle: 60,
-              innerRadius: 60,
-              indexLabelFontSize: 17,
-              indexLabel: "{label} - #percent%",
-              toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-              dataPoints: [
-                { y: #{ shows.length }, label: "Inbox" },
-                { y: 45, label: "Archives" }
-              ]
-            }]
-          });
-          chart.render();
-          }
-        #chartContainer(style='height: 100%; width: 100%;')
-        script(src='https://canvasjs.com/assets/script/canvasjs.min.js')
-
     script(src='/vendor/jquery/jquery-3.2.1.min.js')
     script(src='/vendor/bootstrap/js/popper.js')
     script(src='/vendor/bootstrap/js/bootstrap.min.js')
