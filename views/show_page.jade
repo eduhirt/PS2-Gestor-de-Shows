@@ -36,7 +36,7 @@ block content
             .col-md-10
               p Dia #{show.end.getDay()}/#{show.end.getMonth()}, às #{show.end.getHours()}:0#{show.end.getMinutes()}h
           .row
-            div.botao-cadastro.margin-top(style="width: 100%;")
+            div.botao-cadastro.margin-top(style="width: 100%; margin-bottom: 20px;")
               form.form-horizontal(name="buy",method="post",action="/show/#{show.id}/buy")  
                 if (session.passport != undefined)
                   if (session.passport.user != undefined)
@@ -46,6 +46,6 @@ block content
                       else
                         button.btn.btn-primary(type="submit", style="margin-bottom: 20px;", onClick="location.href='http://localhost:3000/show/#{show.id}'") Cadastrar no evento
                 else
-                    a.cadastro(href="/login", style="margin-bottom: 20px;") Faça login para se cadastrar no show!
+                    a.cadastro(href="/login") Faça login para se cadastrar no show!
         .col-md-2
             
