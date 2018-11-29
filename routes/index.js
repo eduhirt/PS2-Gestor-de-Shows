@@ -106,15 +106,22 @@ var echarts = require('echarts');
 
 /* PÁGINA TESTE DE ADMINISTRADOR */
 router.get('/admin', require('connect-ensure-login').ensureLoggedIn(), function(req, res, next) {
-    var chartOptions = clone(responses_x_questions);
-    console.log(chartOptions);
+    var db = req.db;
+    User.find({}, function(err, users) {
+        Show.find({}, function(err, shows) {
+            console.log(req.session.passport.user);
+            var user_shows = req.session.passport.user[0].shows;
+            var user = req.session.passport.user[0];
 
-    var categories = ["newCat1","newCat2","newCat3","newCat4","newCat5"];
 
-    chartOptions.xAxis[0].data = categories;
-    chartOptions.series[0].data = [10,20,30,40,50];
-
-    res.render('admin', { title: 'Admin Page', data: JSON.stringify(chartOptions) });
+            res.render('admin', {
+                "shows" : shows.reverse(),
+                "users" : users,
+                "user_shows" : user_shows,
+                "usr" : user
+            });
+        });
+    });
 });
 
 
