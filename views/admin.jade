@@ -7,6 +7,16 @@ html
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin='anonymous')
     link#bootstrap-css(href='//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css', rel='stylesheet')  
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', type='text/css', href='/vendor/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/fonts/font-awesome-4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/animate/animate.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/select2/select2.min.css')
+    link(rel='stylesheet', type='text/css', href='/vendor/perfect-scrollbar/perfect-scrollbar.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/util.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/main.css')
+
 
 
 block content
@@ -15,7 +25,7 @@ block content
   // <div class="absolute-wrapper"> </div>
   // Menu
   .side-menu
-    nav.navbar.navbar-default(role='navigation')
+    nav#sidemenu.navbar(role='navigation')
       // Brand and toggle get grouped for better mobile display
       .navbar-header
         .brand-wrapper
@@ -27,11 +37,9 @@ block content
             span.icon-bar
           // Brand
           .brand-name-wrapper
-            a.navbar-brand(href='#')
-              | Brand
+            a#brand.navbar-brand(href='/')
+              | EVENTOP
           // Search
-          a#search-trigger.btn.btn-default(data-toggle='collapse', href='#search')
-            span.glyphicon.glyphicon-search
           // Search body
           #search.panel-collapse.collapse
             .panel-body
@@ -41,45 +49,54 @@ block content
                 button.btn.btn-default(type='submit')
                   span.glyphicon.glyphicon-ok
       // Main Menu
-      .side-menu-container(style='width:100%; margin-top:10%;')
+      .side-menu-container(style='width:100%; margin-top:20%;')
         ul.nav.navbar-nav(style='width:100%;')
           li
-            a(href='#')
+            a(href='/admin')
               span.glyphicon.glyphicon-home
               |  Página Inicial
           li
-            a(href='#')
+            a(href='/myshows')
               span.glyphicon.glyphicon-music
               |  Meus shows
           li
-            a(href='#')
+            a(href='/newevent')
               span.glyphicon.glyphicon-plus
               |  Publicar novo evento
           li
-            a(href='#')
+            a(href='/admin/stats')
               span.glyphicon.glyphicon-stats
               |  Estatísticas
           li
-            a(href='#')
+            a(href='/logout')
               span.glyphicon.glyphicon-undo
               |  Logout
       // /.navbar-collapse
       // Main Content
-  .container-fluid
+  .container-fluid(style="background-color:white")
     .side-body
-      h1  Bem vindo a página do Administrador!   
-        h2 Shows que estou cadastrado:
-          each show in shows
-            each showusr in user_shows
-              if (show._id == showusr)
-                p #{ show.name }
-                
+      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Shows que está cadastrado:
+      .limiter
+        .container-table100(style="background-color: white !important")
+          .wrap-table100
+            .table100.ver5.m-b-110
+              table(data-vertable='ver1', style="background-color:#d1d1d1")
+                thead
+                  tr.row100.head
+                    th.column100.column1(data-column='column1') Nome
+                    th.column100.column2(data-column='column2') Data
+                    th.column100.column2(data-column='column3') Pessoas confirmadas
+                  each show in shows
+                    each showusr in user_shows
+                      if (show._id == showusr)
+                        tbody
+                          tr.row100
+                            td.column100.column1(data-column='column1') #{ show.name }
+                            td.column100.column2(data-column='column2') #{show.start.getDay()}/#{show.start.getMonth()}, às #{show.start.getHours()}:0#{show.start.getMinutes()}h
+                            td.column100.column2(data-column='column2') #{ show.bought.length }
 
 
-
-      p #{users.length}    
-      each user in users
-        p #{user.name}
+      h2(style="margin-left: 40px;margin-top:50px; font-weight: bolder;") Dados:
       .graph
         script.
           window.onload = function () {
@@ -103,18 +120,17 @@ block content
               indexLabel: "{label} - #percent%",
               toolTipContent: "<b>{label}:</b> {y} (#percent%)",
               dataPoints: [
-                { y: 67, label: "Inbox" },
-                { y: 28, label: "Archives" },
-                { y: 10, label: "Labels" },
-                { y: 7, label: "Drafts"},
-                { y: 15, label: "Trash"},
-                { y: 6, label: "Spam"}
-              ]
+                { y: 67, label: "Shows que participo" },
+                { y: 28, label: "Total de shows" },
             }]
           });
           chart.render();
           }
         #chartContainer(style='height: 100%; width: 100%;')
         script(src='https://canvasjs.com/assets/script/canvasjs.min.js')
-      
-      p ai meu deus
+
+    script(src='/vendor/jquery/jquery-3.2.1.min.js')
+    script(src='/vendor/bootstrap/js/popper.js')
+    script(src='/vendor/bootstrap/js/bootstrap.min.js')
+    script(src='/vendor/select2/select2.min.js')
+    script(src='/scripts/main.js')
